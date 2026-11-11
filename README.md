@@ -50,13 +50,13 @@ This is an independent community project, **not affiliated with Acer**. It is an
 | Linux — source archive | Application, kernel driver source, setup/removal scripts, documentation and tests |
 | Windows / macOS | No native backend or download is published |
 
-Download only files actually attached to **[Releases](https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.1.0)** and compare them against that release’s `SHA256SUMS`. The wheel resolves PySide6 through pip; it is **not a self-contained AppImage** and does not install a kernel driver automatically.
+Download only files actually attached to **[Releases](https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.2.0)** and compare them against that release’s `SHA256SUMS`. The wheel resolves PySide6 through pip; it is **not a self-contained AppImage** and does not install a kernel driver automatically.
 
 | Published file | Download |
 | --- | --- |
-| Application wheel | [nitro_sense_linux-0.1.0-py3-none-any.whl](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro_sense_linux-0.1.0-py3-none-any.whl) |
-| Source and driver | [nitro-sense-linux-0.1.0.tar.gz](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro-sense-linux-0.1.0.tar.gz) |
-| Checksums | [SHA256SUMS](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/SHA256SUMS) |
+| Application wheel | [nitro_sense_linux-0.2.0-py3-none-any.whl](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.2.0/nitro_sense_linux-0.2.0-py3-none-any.whl) |
+| Source and driver | [nitro_sense_linux-0.2.0.tar.gz](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.2.0/nitro_sense_linux-0.2.0.tar.gz) |
+| Checksums | [SHA256SUMS](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.2.0/SHA256SUMS) |
 
 **Registry status:** releases are published on GitHub. No PyPI, AUR, Flathub, apt or dnf repository is published. Do not install an unrelated similarly named package as a substitute.
 

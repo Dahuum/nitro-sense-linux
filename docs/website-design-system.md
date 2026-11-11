@@ -294,9 +294,9 @@ preference is added, use a dedicated localStorage key and handle denied storage.
 Production release destinations:
 
 - Main release: `https://github.com/Dahuum/nitro-sense-linux/releases/latest`
-- Wheel: `https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro_sense_linux-0.1.0-py3-none-any.whl`
-- Source: `https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro-sense-linux-0.1.0.tar.gz`
-- Checksums: `https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/SHA256SUMS`
+- Wheel: `https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.2.0/nitro_sense_linux-0.2.0-py3-none-any.whl`
+- Source: `https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.2.0/nitro_sense_linux-0.2.0.tar.gz`
+- Checksums: `https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.2.0/SHA256SUMS`
 - Public page: `https://dahuum.github.io/nitro-sense-linux/`
 
 Use correct canonical, OpenGraph and optional SoftwareApplication structured data
