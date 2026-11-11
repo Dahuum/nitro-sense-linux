@@ -1,0 +1,11 @@
+[Unit]
+Description=Allow nitrosense group access to selected Acer controls
+After=systemd-modules-load.service
+ConditionPathExists=/sys/module/linuwu_sense
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/nitro-sense-permissions
+
+[Install]
+WantedBy=multi-user.target

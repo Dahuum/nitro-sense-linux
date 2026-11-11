@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=NitroSense Linux
+Comment=Native fan, lighting and hardware monitoring for Acer Nitro AN515-45
+Exec=nitro-sense --enable-control
+Icon=nitro-sense
+Terminal=false
+Categories=Settings;HardwareSettings;
+StartupNotify=true
+Keywords=fan;temperature;RGB;keyboard;Acer;Nitro;

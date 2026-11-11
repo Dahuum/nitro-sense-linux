@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+# Fixed allowlist only. Never make all of sysfs writable.
+set -eu
+[ "$(id -u)" = 0 ] || exit 1
+getent group nitrosense >/dev/null || exit 0
+base=/sys/devices/platform/acer-wmi
+for relative in \
+  nitro_sense/fan_speed \
+  nitro_sense/coolboost \
+  nitro_sense/backlight_timeout \
+  nitro_sense/battery_limiter \
+  nitro_sense/usb_charging \
+  four_zoned_kb/four_zone_mode \
+  four_zoned_kb/per_zone_mode
+do
+  target="$base/$relative"
+  if [ -f "$target" ] && [ ! -L "$target" ]; then
+    chgrp nitrosense "$target"
+    chmod 0660 "$target"
+  fi
+done

@@ -1,0 +1,17 @@
+[
+  {
+    "path": "Nitro_Sense_Acer_3.01.3056_W11x64_A.zip",
+    "sha256": "f9185452fd6baf23ac33f417a35f98686e202e10f1bd1745908e5bfcab971622",
+    "bytes": 29163548
+  },
+  {
+    "path": "extracted/ui-analysis/Win32/NitroSense.exe",
+    "sha256": "f71a2eebf07f11e91337a0f5de7feefda54e96d8b007d3904adf4f459856b2cd",
+    "bytes": 14781640
+  },
+  {
+    "path": "extracted/msi/FILE_APP_SVC_EXE",
+    "sha256": "e6638fecc41730075d25587bfdda7b4dda2d170b64ac9df9b3c03543999f3b4e",
+    "bytes": 870088
+  }
+]

@@ -1,0 +1,10 @@
+include LICENSE THIRD_PARTY_NOTICES.md requirements.txt launch.sh
+recursive-include docs *.md
+recursive-include driver *.c Makefile LICENSE* *.md *.conf
+recursive-include packaging *.desktop *.svg *.rules *.service
+recursive-include scripts *.sh *.py
+recursive-include tests *.py
+recursive-include website *.html *.css *.js *.svg
+recursive-include patches *.patch
+recursive-include evidence *hardware-test.json artifact-identities.json public-summary.json ui-native.png
+global-exclude *.py[cod] *.o *.ko *.mod *.mod.c *.cmd

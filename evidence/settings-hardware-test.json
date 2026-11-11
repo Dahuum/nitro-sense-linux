@@ -1,0 +1,34 @@
+[
+  {
+    "interface": "coolboost",
+    "initial": "0",
+    "requested": "1",
+    "readback": "1",
+    "matches": true,
+    "restored": "0"
+  },
+  {
+    "interface": "backlight_timeout",
+    "initial": "1",
+    "requested": "0",
+    "readback": "0",
+    "matches": true,
+    "restored": "1"
+  },
+  {
+    "interface": "battery_limiter",
+    "initial": "0",
+    "requested": "1",
+    "readback": "1",
+    "matches": true,
+    "restored": "0"
+  },
+  {
+    "interface": "usb_charging",
+    "initial": "30",
+    "requested": "20",
+    "readback": "20",
+    "matches": true,
+    "restored": "30"
+  }
+]

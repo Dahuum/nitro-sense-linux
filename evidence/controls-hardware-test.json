@@ -1,0 +1,307 @@
+[
+  {
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 3092
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3750
+      }
+    ],
+    "fan_request": {
+      "cpu": 0,
+      "gpu": 0
+    },
+    "power": {
+      "available": true,
+      "profiles": [
+        "performance",
+        "balanced",
+        "power-saver"
+      ],
+      "active": "performance",
+      "reason": "Power Profiles Daemon available."
+    },
+    "switches": {
+      "backlight_timeout": {
+        "available": false,
+        "readable": false,
+        "value": null,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Current hardware state is unknown."
+      },
+      "battery_limiter": {
+        "available": true,
+        "readable": true,
+        "value": 0,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Ready."
+      },
+      "usb_charging": {
+        "available": true,
+        "readable": true,
+        "value": 30,
+        "choices": [
+          0,
+          10,
+          20,
+          30
+        ],
+        "reason": "Ready."
+      }
+    },
+    "stage": "baseline"
+  },
+  {
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 4615
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 5769
+      }
+    ],
+    "fan_request": {
+      "cpu": 60,
+      "gpu": 70
+    },
+    "power": {
+      "available": true,
+      "profiles": [
+        "performance",
+        "balanced",
+        "power-saver"
+      ],
+      "active": "performance",
+      "reason": "Power Profiles Daemon available."
+    },
+    "switches": {
+      "backlight_timeout": {
+        "available": false,
+        "readable": false,
+        "value": null,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Current hardware state is unknown."
+      },
+      "battery_limiter": {
+        "available": true,
+        "readable": true,
+        "value": 0,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Ready."
+      },
+      "usb_charging": {
+        "available": true,
+        "readable": true,
+        "value": 30,
+        "choices": [
+          0,
+          10,
+          20,
+          30
+        ],
+        "reason": "Ready."
+      }
+    },
+    "stage": "custom_cpu60_gpu70"
+  },
+  {
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 2970
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3703
+      }
+    ],
+    "fan_request": {
+      "cpu": 0,
+      "gpu": 0
+    },
+    "power": {
+      "available": true,
+      "profiles": [
+        "performance",
+        "balanced",
+        "power-saver"
+      ],
+      "active": "performance",
+      "reason": "Power Profiles Daemon available."
+    },
+    "switches": {
+      "backlight_timeout": {
+        "available": false,
+        "readable": false,
+        "value": null,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Current hardware state is unknown."
+      },
+      "battery_limiter": {
+        "available": true,
+        "readable": true,
+        "value": 0,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Ready."
+      },
+      "usb_charging": {
+        "available": true,
+        "readable": true,
+        "value": 30,
+        "choices": [
+          0,
+          10,
+          20,
+          30
+        ],
+        "reason": "Ready."
+      }
+    },
+    "stage": "automatic_restored"
+  },
+  {
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 3061
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3658
+      }
+    ],
+    "fan_request": {
+      "cpu": 0,
+      "gpu": 0
+    },
+    "power": {
+      "available": true,
+      "profiles": [
+        "performance",
+        "balanced",
+        "power-saver"
+      ],
+      "active": "balanced",
+      "reason": "Power Profiles Daemon available."
+    },
+    "switches": {
+      "backlight_timeout": {
+        "available": false,
+        "readable": false,
+        "value": null,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Current hardware state is unknown."
+      },
+      "battery_limiter": {
+        "available": true,
+        "readable": true,
+        "value": 0,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Ready."
+      },
+      "usb_charging": {
+        "available": true,
+        "readable": true,
+        "value": 30,
+        "choices": [
+          0,
+          10,
+          20,
+          30
+        ],
+        "reason": "Ready."
+      }
+    },
+    "stage": "balanced_profile"
+  },
+  {
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 3092
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3614
+      }
+    ],
+    "fan_request": {
+      "cpu": 0,
+      "gpu": 0
+    },
+    "power": {
+      "available": true,
+      "profiles": [
+        "performance",
+        "balanced",
+        "power-saver"
+      ],
+      "active": "performance",
+      "reason": "Power Profiles Daemon available."
+    },
+    "switches": {
+      "backlight_timeout": {
+        "available": false,
+        "readable": false,
+        "value": null,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Current hardware state is unknown."
+      },
+      "battery_limiter": {
+        "available": true,
+        "readable": true,
+        "value": 0,
+        "choices": [
+          0,
+          1
+        ],
+        "reason": "Ready."
+      },
+      "usb_charging": {
+        "available": true,
+        "readable": true,
+        "value": 30,
+        "choices": [
+          0,
+          10,
+          20,
+          30
+        ],
+        "reason": "Ready."
+      }
+    },
+    "stage": "restored"
+  }
+]

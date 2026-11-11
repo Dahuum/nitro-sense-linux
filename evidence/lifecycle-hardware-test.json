@@ -1,0 +1,13 @@
+{
+  "before_signal": {
+    "cpu": 60,
+    "gpu": 70
+  },
+  "returncode": 0,
+  "after_signal": {
+    "cpu": 0,
+    "gpu": 0
+  },
+  "stderr": "",
+  "stdout": ""
+}

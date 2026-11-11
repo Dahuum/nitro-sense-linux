@@ -1,0 +1,515 @@
+[
+  {
+    "stage": "automatic_baseline",
+    "utc": "2026-11-11T09:32:48.153839+00:00",
+    "requested_state_readback": "0,0",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 3125
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3703
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 53.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 54.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 60.5
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 65.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "maximum_2s",
+    "utc": "2026-11-11T09:32:50.194446+00:00",
+    "requested_state_readback": "100,100",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 5769
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 5660
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 53.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 52.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 60.25
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 60.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 53.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "maximum_4s",
+    "utc": "2026-11-11T09:32:52.215149+00:00",
+    "requested_state_readback": "100,100",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 5769
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 5660
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 53.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 54.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 59.875
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 65.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 53.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "maximum_6s",
+    "utc": "2026-11-11T09:32:54.233754+00:00",
+    "requested_state_readback": "100,100",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 5769
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 5660
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 53.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 52.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 59.5
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "maximum_8s",
+    "utc": "2026-11-11T09:32:56.256582+00:00",
+    "requested_state_readback": "100,100",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 5660
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 5660
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 53.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 52.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 60.125
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "automatic_restored",
+    "utc": "2026-11-11T09:32:56.305036+00:00",
+    "requested_state_readback": "0,0",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 5660
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 5660
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 50.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 53.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 52.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 60.125
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "automatic_recovery_2s",
+    "utc": "2026-11-11T09:32:58.324921+00:00",
+    "requested_state_readback": "0,0",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 2970
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3488
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 51.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 51.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 54.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 51.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 59.75
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 60.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "automatic_recovery_4s",
+    "utc": "2026-11-11T09:33:00.343417+00:00",
+    "requested_state_readback": "0,0",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 3061
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3703
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 51.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 51.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 54.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 53.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 59.375
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  },
+  {
+    "stage": "automatic_recovery_6s",
+    "utc": "2026-11-11T09:33:02.364339+00:00",
+    "requested_state_readback": "0,0",
+    "fans": [
+      {
+        "name": "acer / fan1_input",
+        "rpm": 3092
+      },
+      {
+        "name": "acer / fan2_input",
+        "rpm": 3703
+      }
+    ],
+    "temperatures": [
+      {
+        "name": "acpitz / temp1_input",
+        "celsius": 57.0
+      },
+      {
+        "name": "nvme / Composite",
+        "celsius": 51.85
+      },
+      {
+        "name": "nvme / Sensor 1",
+        "celsius": 51.85
+      },
+      {
+        "name": "nvme / Sensor 2",
+        "celsius": 54.85
+      },
+      {
+        "name": "amdgpu / edge",
+        "celsius": 51.0
+      },
+      {
+        "name": "k10temp / Tctl",
+        "celsius": 59.375
+      },
+      {
+        "name": "mt7921_phy0 / temp1_input",
+        "celsius": 67.0
+      },
+      {
+        "name": "acer / temp1_input",
+        "celsius": 59.0
+      },
+      {
+        "name": "acer / temp2_input",
+        "celsius": 52.0
+      },
+      {
+        "name": "acer / temp3_input",
+        "celsius": 57.0
+      }
+    ]
+  }
+]

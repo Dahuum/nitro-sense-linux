@@ -1,0 +1,93 @@
+{
+  "note": "Complete REA records remain local because they contain substantial Acer metadata/decompilation. This index authenticates identity and analysis records; firmware tests have separate local runtime records. No original binaries or decompiled source are distributed.",
+  "records": [
+    {
+      "operation": "inspect_artifact",
+      "evidence_id": "ev_8d43df4784a641965cd91870d239a4f68b69aaf3ea54d7e8455c3d76db664a50",
+      "subject_sha256": "f9185452fd6baf23ac33f417a35f98686e202e10f1bd1745908e5bfcab971622",
+      "record_sha256": "be8632739f125ea1d33c7f3dd9bc94c6985e5bbe83a9e9a8ed03eb52bcb31ea7",
+      "local_record": "evidence/package.json",
+      "provider": "rea-artifact-graph"
+    },
+    {
+      "operation": "inspect_managed_artifact",
+      "evidence_id": "ev_6ca067e5ad67218ddc64f2d22f5dac0709ecb8a1931631f4481401bf8e0a3f75",
+      "subject_sha256": "f71a2eebf07f11e91337a0f5de7feefda54e96d8b007d3904adf4f459856b2cd",
+      "record_sha256": "466d482538d2c3e1df9999db63335aae4e295923d5515951f3312e06f7d63b0c",
+      "local_record": "evidence/ui-managed.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "inspect_managed_members",
+      "evidence_id": "ev_2df276a6ff340dd8c8c68693bf6c75893d0bac1c4cd66c9c4856f662a602536f",
+      "subject_sha256": "f71a2eebf07f11e91337a0f5de7feefda54e96d8b007d3904adf4f459856b2cd",
+      "record_sha256": "54d09014a4c6cb588e3c4934b00aa62c75a0d381c026a51ce2c587e9e2c96ad1",
+      "local_record": "evidence/ui-members.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "inspect_managed_artifact",
+      "evidence_id": "ev_b5f0b78287b794041e2a5206b9466232231b0ec9d142c9ef4f42dc6e98d9ad94",
+      "subject_sha256": "0f3d8ab47fb5346e6d11ab561f7fdbe49b0db2f02c1954274c984d9c331ff284",
+      "record_sha256": "fc5130b1c33c1029a4342e7f8083aa73c81dd886673f9b8718c0fbabc4d6ad1a",
+      "local_record": "evidence/sdk-identity.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "inspect_managed_members",
+      "evidence_id": "ev_822dd7ad8ccdb6efdb4dcd432648b77ddf83adce1cc45c1240eb7d5b3333c518",
+      "subject_sha256": "0f3d8ab47fb5346e6d11ab561f7fdbe49b0db2f02c1954274c984d9c331ff284",
+      "record_sha256": "b34fe3c9fa932fd00b056cbcc591e77b5e95959c3a7a8954f13bd351341d5907",
+      "local_record": "evidence/sdk-members.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "inspect_managed_native_boundaries",
+      "evidence_id": "ev_8aa611a82d76e7a13ab23d489ff8f9503ec56ddfb4d1a3d824712c86f4dec230",
+      "subject_sha256": "0f3d8ab47fb5346e6d11ab561f7fdbe49b0db2f02c1954274c984d9c331ff284",
+      "record_sha256": "1cc7e5e6782c2e93391c6b15ee5c1b98402cc7db25ca6694f2594290e291b3a3",
+      "local_record": "evidence/sdk-boundaries.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "inspect_managed_artifact",
+      "evidence_id": "ev_c71e79eb0dec2e7c8f415dbb624e81fdaed4883757f9e75bf89a9857a06b5479",
+      "subject_sha256": "79a1645c08976ddf74e84d3c5bd6ffd47f1fde9f2a9f0ad89bf78171912b2705",
+      "record_sha256": "8aebbbbb8b14985ad41970fef873e38d1a9d0347d5722427938e5623384eefc5",
+      "local_record": "evidence/protocol-ipc-managed.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "inspect_managed_members",
+      "evidence_id": "ev_b8c0b039f009d2ab49735943da0b2645040ac4e4c91d7554cc339f465afc34c2",
+      "subject_sha256": "79a1645c08976ddf74e84d3c5bd6ffd47f1fde9f2a9f0ad89bf78171912b2705",
+      "record_sha256": "fa56b64233f9989b5717d4b33e18692b8cc3728227e24a122023496c92b4ce6f",
+      "local_record": "evidence/protocol-ipc-members.json",
+      "provider": "rea-dotnet-static"
+    },
+    {
+      "operation": "search_strings",
+      "evidence_id": "ev_9763fb6924d5a8fe2c062aab0d47cb9f08da749d3dd39d2b03e622b19098ae46",
+      "subject_sha256": "e6638fecc41730075d25587bfdda7b4dda2d170b64ac9df9b3c03543999f3b4e",
+      "record_sha256": "27480f45fabb991f649a680b2f77370013753dd3a02c522189cacd725d5fa7fc",
+      "local_record": "evidence/service-wmi-search.json",
+      "provider": "ghidra"
+    },
+    {
+      "operation": "xrefs",
+      "evidence_id": "ev_7f1b158d756918094722ed00249584d29e396ed8a73b8e13609cc89e547f7c31",
+      "subject_sha256": "e6638fecc41730075d25587bfdda7b4dda2d170b64ac9df9b3c03543999f3b4e",
+      "record_sha256": "797cd413537b20dda314d3ef2261a32f7b0495030ca24e0f82d9ed6194dc4bb4",
+      "local_record": "evidence/service-setfunction-xrefs.json",
+      "provider": "ghidra"
+    },
+    {
+      "operation": "procedure_pseudo_code",
+      "evidence_id": "ev_482d3b2658e04868535ed72b47edac2fca7ff7b0ec572f37aae60e8b37580dff",
+      "subject_sha256": "e6638fecc41730075d25587bfdda7b4dda2d170b64ac9df9b3c03543999f3b4e",
+      "record_sha256": "e9509c81240bed0606d7597de36c875559ca75115e2fe960a5421b0dc38b6514",
+      "local_record": "evidence/service-setfunction-decompile.json",
+      "provider": "ghidra"
+    }
+  ]
+}

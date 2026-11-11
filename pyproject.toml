@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nitro-sense-linux"
+version = "0.1.0"
+description = "Native Linux fan, keyboard lighting and monitoring controls for Acer Nitro AN515-45"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Dahuum"}]
+dependencies = ["PySide6>=6.8,<7"]
+classifiers = ["Development Status :: 3 - Alpha", "Environment :: X11 Applications :: Qt", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3"]
+
+[project.urls]
+Homepage = "https://dahuum.github.io/nitro-sense-linux/"
+Repository = "https://github.com/Dahuum/nitro-sense-linux"
+Issues = "https://github.com/Dahuum/nitro-sense-linux/issues"
+
+[project.scripts]
+nitro-sense = "nitro_sense.__main__:main"
+nitro-sense-import-assets = "nitro_sense.import_assets:main"
+
+[tool.setuptools.packages.find]
+include = ["nitro_sense*"]

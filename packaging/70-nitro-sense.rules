@@ -1,0 +1,2 @@
+# The helper contains a fixed sysfs allowlist and accepts no path arguments.
+ACTION=="add", SUBSYSTEM=="platform", KERNEL=="acer-wmi", TAG+="systemd", ENV{SYSTEMD_WANTS}+="nitro-sense-permissions.service"
