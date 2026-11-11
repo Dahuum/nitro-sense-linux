@@ -7,11 +7,11 @@
 Fan control, four-zone keyboard lighting and monitoring for the Acer Nitro AN515-45.<br>
 Python · PySide6 / Qt · Linux WMI · MIT application / GPL driver
 
-**Early release v0.1.0 · Native desktop · AN515-45 hardware tested**
+**Release v0.2.0 · Native desktop · AN515-45 hardware tested**
 
 [Website](https://dahuum.github.io/nitro-sense-linux/) · [Downloads](https://github.com/Dahuum/nitro-sense-linux/releases) · [Get started](#get-started) · [What works](#what-works) · [Documentation](#documentation) · [Contribute](CONTRIBUTING.md)
 
-<img src="evidence/ui-native.png" width="1000" alt="Actual NitroSense Linux native desktop application with CPU and GPU fan RPM, power profiles and temperature monitoring">
+<img src="evidence/ui-native.png?v=0.2.0" width="1000" alt="Actual NitroSense Linux native desktop application with CPU and GPU fan RPM, power profiles and temperature monitoring">
 
 *Actual native application on the development laptop, using independently drawn artwork.*
 
@@ -27,7 +27,7 @@ This is an independent community project, **not affiliated with Acer**. It is an
 | --- | --- |
 | Auto / Max fan control and measured CPU/GPU RPM | Verified on the development laptop: **3125 / 3703 → 5769 / 5660 RPM**, then Auto restored |
 | Independent custom CPU/GPU fan percentages | Physically tested: **60% / 70% → 4615 / 5769 RPM**, then Auto restored |
-| Static four-zone RGB; Breathing and Wave | Requests matched firmware readback; **visible colors/effects still need human confirmation** |
+| Static four-zone RGB; Breathing and Wave | **Visible colors/effects verified** on the development laptop after the v0.2.0 lighting fix |
 | Neon, Shifting and Zoom; effect controls and color palettes | Implemented and software-tested; these effects remain visually unverified |
 | CoolBoost, keyboard timeout, battery limit and USB charging thresholds | Set/readback tested; original settings restored afterward |
 | CPU/NVIDIA GPU telemetry, memory, history, min/max and CSV export | Implemented with real sensor sources; native UI and export software-tested |
