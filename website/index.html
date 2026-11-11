@@ -1,70 +1,89 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101012">
-  <meta name="description" content="Native Linux fan control, hardware monitoring and keyboard lighting integration for Acer Nitro AN515-45. Explore the app, hardware evidence and downloads.">
-  <title>NitroSense Linux — Your hardware. Your control.</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#151313">
+  <title>NitroSense Linux — your laptop, in your hands.</title>
+  <meta name="description" content="Native fan control, four-zone keyboard lighting and monitoring for the Acer Nitro AN515-45. Open source, built with Qt, tested on Linux.">
+  <link rel="canonical" href="https://dahuum.github.io/nitro-sense-linux/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NitroSense Linux — your laptop, in your hands.">
+  <meta property="og:description" content="Native fan control, keyboard lighting and monitoring for the Acer Nitro AN515-45.">
+  <meta property="og:url" content="https://dahuum.github.io/nitro-sense-linux/">
+  <meta property="og:image" content="https://dahuum.github.io/nitro-sense-linux/assets/native-app.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="assets/fonts/funnel-display.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"NitroSense Linux","applicationCategory":"UtilitiesApplication","operatingSystem":"Linux","softwareVersion":"0.1.0","url":"https://dahuum.github.io/nitro-sense-linux/","downloadUrl":"https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.1.0","license":"https://github.com/Dahuum/nitro-sense-linux/blob/main/LICENSE","isAccessibleForFree":true,"author":{"@type":"Person","name":"Dahuum","url":"https://github.com/Dahuum"}}</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header wrap">
-    <a class="brand" href="#" aria-label="NitroSense Linux home"><svg width="30" height="34" viewBox="0 0 30 34" fill="none" aria-hidden="true"><path d="M2 28V5L11 14V2L28 19V31L19 22V33L2 16" stroke="currentColor" stroke-width="3"/></svg><span>NITROSENSE<span class="brand-os">LINUX</span></span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="navigation" aria-label="Main navigation"><a href="#control">The app</a><a href="#compatibility">Compatibility</a><a href="#install">Install</a><a href="https://github.com/Dahuum/nitro-sense-linux" class="nav-source">GitHub <span aria-hidden="true">↗</span></a></nav>
-  </header>
-  <main id="main">
-    <section class="hero wrap">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> NATIVE DESKTOP APP · LINUX</p>
-        <h1>Your hardware.<br>Your <em>control.</em></h1>
-        <p class="hero-description">Bring NitroSense controls to Linux. Manage your fans, monitor your laptop, and explore four-zone keyboard lighting in a native desktop app.</p>
-        <div class="actions"><a class="button primary" href="https://github.com/Dahuum/nitro-sense-linux/releases/latest">Get the latest release <span aria-hidden="true">↓</span></a><a class="button secondary" href="#control">Explore the app <span aria-hidden="true">↗</span></a></div>
-        <p class="hero-note">Built for Acer Nitro AN515-45. Independent project.<br>Linux release · Python + Qt · Evidence-led development</p>
-      </div>
-      <div class="hero-visual">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="app-window" aria-label="Illustrative application interface showing fan controls, temperature and keyboard lighting">
-          <div class="app-title"><span class="tiny-mark">N</span><span>NITRO<span class="light">SENSE</span></span><div class="window-dots"><i></i><i></i><i></i></div></div>
-          <div class="app-tabs"><span class="selected">SYSTEM</span><span>KEYBOARD</span><span>SETTINGS</span><span class="device">AN515-45</span></div>
-          <div class="app-body">
-            <div class="panel-heading"><span>FAN CONTROL</span><span class="live-badge">AUTO</span></div>
-            <div class="fan-row">
-              <div class="fan-item"><span class="small-label">CPU FAN</span><div class="fan-dial"><div class="fan-blades"></div><div class="fan-center"><strong>3,125</strong><span>RPM</span></div></div></div>
-              <div class="fan-item"><span class="small-label">GPU FAN</span><div class="fan-dial"><div class="fan-blades reverse"></div><div class="fan-center"><strong>3,703</strong><span>RPM</span></div></div></div>
-            </div>
-            <div class="mode-picker"><span class="active">Auto</span><span>Max</span><span>Custom</span></div>
-            <div class="monitor-row"><div><span class="small-label">CPU TEMPERATURE</span><strong>60<span>°C</span></strong><div class="sparkline"><svg viewBox="0 0 160 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 23L12 20L22 25L35 15L48 18L60 8L75 12L85 6L98 16L110 13L125 17L140 9L160 12"/></svg></div></div><div><span class="small-label">KEYBOARD LIGHTING</span><div class="keyboard-mini" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="keyboard-note">Four zones. Your palette.</span></div></div>
-          </div>
-          <div class="app-bottom"><span class="status-dot"></span> NitroSense Linux <span class="illustration-label">Interface illustration</span></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
+  <header class="hero">
+    <div class="masthead">
+      <a class="wordmark" href="./" aria-label="NitroSense Linux home"><span class="mark" aria-hidden="true">N</span> INDEPENDENT / OPEN SOURCE</a>
+      <div class="masthead-actions"><a href="https://github.com/Dahuum/nitro-sense-linux">GitHub <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" hidden aria-label="Switch to light theme" aria-pressed="false"><span aria-hidden="true">◐</span></button></div>
+    </div>
+    <h1>NitroSense<span class="linux-label">/ Linux</span></h1>
+    <div class="pitch"><p>Your laptop. Your fans. Your colors.<br>Native controls for the Nitro you run Linux on.</p><a class="button primary" href="https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.1.0">Download v0.1.0 <span aria-hidden="true">↗</span></a></div>
+    <figure class="hardware-figure">
+      <div class="hardware" role="img" aria-label="An independently drawn laptop cooling assembly with two red-accented fans and four keyboard lighting zones.">
+        <div class="board-label" aria-hidden="true"><span>AN515-45</span><span>DUAL FAN / FOUR ZONE</span></div>
+        <div class="cooling" aria-hidden="true">
+          <div class="fan-unit"><div class="fan"><div class="fan-blades"></div><span class="fan-hub">CPU<span>01</span></span></div><span class="fan-caption">PROCESSOR</span></div>
+          <div class="heatpipes"><i></i><i></i><span>N<span class="tiny-red">/</span></span><small>FIRMWARE IN CONTROL.<br>YOU MAKE THE CALL.</small></div>
+          <div class="fan-unit"><div class="fan fan-second"><div class="fan-blades"></div><span class="fan-hub">GPU<span>02</span></span></div><span class="fan-caption">GRAPHICS</span></div>
         </div>
-        <div class="visual-caption"><span class="caption-line"></span> MADE FOR THE DESKTOP. BUILT FOR LINUX.</div>
+        <div class="zone-strip" aria-hidden="true"><span>ZONE 01</span><span>ZONE 02</span><span>ZONE 03</span><span>ZONE 04</span></div>
+        <div class="board-screws" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       </div>
+      <figcaption>Made for the <strong>Acer Nitro AN515-45.</strong> Fan control, four-zone lighting and live monitoring in a native Qt app. The illustration above is a design preview, not a connection to your laptop.</figcaption>
+    </figure>
+  </header>
+
+  <main id="main">
+    <section class="split" aria-labelledby="control-title">
+      <div><p class="eyebrow">01 / A LITTLE MORE CONTROL</p><h2 id="control-title">Quiet when you can.<br>Full speed when you need.</h2><p class="note">Choose firmware Auto, Max, or independent CPU and GPU percentages. The app shows measured RPM, and returns manual fans to Auto when it exits normally.</p><a class="text-link" href="https://github.com/Dahuum/nitro-sense-linux/blob/main/docs/backend.md">How hardware control works <span aria-hidden="true">↗</span></a></div>
+      <article class="sample-card" aria-labelledby="sample-title">
+        <div class="sample-top"><span id="sample-title">ON-DEVICE TEST RECORD</span><span class="sample-label">Recorded samples</span></div>
+        <div class="sample-mode"><h3 id="mode-title">Firmware Auto</h3><span class="mode-tag" id="mode-tag">0 / 0</span></div>
+        <div class="rpm-readings"><div><span class="reading-label">CPU FAN</span><p><strong id="cpu-rpm">3,125</strong><span>RPM</span></p><div class="reading-track"><i id="cpu-track" style="--reading:52%"></i></div></div><div><span class="reading-label">GPU FAN</span><p><strong id="gpu-rpm">3,703</strong><span>RPM</span></p><div class="reading-track"><i id="gpu-track" style="--reading:62%"></i></div></div></div>
+        <p class="sr-only" id="sample-status" role="status"></p><p class="sample-description" id="mode-description">Firmware chooses fan speeds automatically. These are the measured baseline values from our development laptop.</p>
+        <div class="sample-foot"><span id="mode-position">01 / 03</span><button type="button" id="next-mode" hidden>See Max mode <span aria-hidden="true">↗</span></button></div>
+        <p class="sample-disclaimer">This page only cycles through published test results. It does not read or change hardware.</p>
+        <noscript><p class="sample-disclaimer">Max measured 5,769 / 5,660 RPM. Custom 60% / 70% measured 4,615 / 5,769 RPM. Auto was restored after each test.</p></noscript>
+      </article>
     </section>
-    <div class="facts-bar"><div class="wrap facts"><span><b>Native Qt</b> desktop interface</span><span><b>Real sensors</b> actual hardware readings</span><span><b>Firmware Auto</b> restored after fan tests</span><span><b>Open development</b> inspect the evidence</span></div></div>
-    <section class="section wrap" id="control">
-      <div class="section-intro"><p class="eyebrow">01 / TAKE THE CONTROLS BACK</p><h2>The essentials,<br>where they belong.</h2><p>A focused desktop experience for the controls your laptop already has. No browser shell. No Windows virtual machine.</p></div>
-      <div class="feature-grid">
-        <article class="feature feature-fans"><div class="feature-top"><span class="feature-number">01</span><span class="tag verified">HARDWARE TESTED</span></div><h3>Make room for performance.</h3><p>Switch between automatic, maximum and custom fan requests, with a CoolBoost toggle when supported. Read measured RPM alongside temperatures—requested percentages are never passed off as physical fan speeds.</p><div class="rpm-comparison"><div><span>Before test</span><strong>3,125 <small>RPM</small></strong></div><span class="comparison-arrow" aria-hidden="true">→</span><div><span>Maximum request</span><strong>5,769 <small>RPM</small></strong></div></div><p class="feature-footnote">CPU fan, AN515-45. One eight-second Max cycle; Auto restored and RPM returned near baseline. A separate custom 60% / 70% request produced 4,615 / 5,769 RPM, then restored Auto.</p></article>
-        <article class="feature"><div class="feature-top"><span class="feature-number">02</span><span class="tag">LIVE TELEMETRY</span></div><h3>See what’s happening.</h3><p>Read available temperatures, fan speeds and CPU/GPU usage, with sensor identities, history and CSV export. Missing sensors stay unavailable instead of becoming made-up zeroes.</p><div class="sensor-preview"><span>CPU thermal sensor</span><span class="sensor-line"></span><span>°C</span><span>Measured fan speed</span><span class="sensor-line short"></span><span>RPM</span><span>Hardware availability</span><span class="sensor-line shorter"></span><span>LIVE</span></div></article>
-        <article class="feature"><div class="feature-top"><span class="feature-number">03</span><span class="tag">DEVICE DEPENDENT</span></div><h3>A little more you.</h3><p>Four-zone static colors and dynamic effects use the Linux driver’s exposed interfaces. Static, Breathing and Wave requests matched firmware readback on the test laptop; visible output still needs confirmation.</p><div class="zone-preview" aria-label="Illustrative four-zone keyboard palette"><span>01</span><span>02</span><span>03</span><span>04</span></div><p class="feature-footnote">Command acceptance and visible color accuracy are different checks. See the feature matrix for current results.</p></article>
-      </div>
+
+    <section class="split" aria-labelledby="native-title">
+      <div><p class="eyebrow">02 / RIGHT AT HOME</p><h2 id="native-title">A native window.<br>A familiar feeling.</h2><p class="note">Four-zone colors and effects. CoolBoost. CPU and NVIDIA GPU monitoring. Local profiles, history export and a system tray. Built around the original layout, using native Qt controls.</p></div>
+      <div class="native-proof"><p>It started with one AN515-45, a Windows installer, and four years of wanting the controls back. The result is an independent Linux reconstruction, with the protocol findings and hardware tests published alongside the code.</p><details class="screenshot-disclosure"><summary>See the actual native application <span aria-hidden="true">↗</span></summary><figure><a href="assets/native-app.png"><img src="assets/native-app.png" width="1320" height="800" loading="lazy" alt="Actual NitroSense Linux native app with fan RPM, power controls and temperature monitoring, using its independently drawn skin."></a><figcaption>Actual native app. Independent artwork. Optional original artwork can be imported locally from your own verified Acer package.</figcaption></figure></details><a class="text-link" href="https://github.com/Dahuum/nitro-sense-linux/blob/main/docs/feature-parity.md">What matches, and what still differs <span aria-hidden="true">↗</span></a></div>
     </section>
-    <section class="compat-section" id="compatibility"><div class="wrap compatibility-layout"><div><p class="eyebrow">02 / KNOW YOUR MACHINE</p><h2>Specific hardware.<br>Specific evidence.</h2><p>This release focuses on the Acer Nitro AN515-45. Support is checked through the actual model and available driver interfaces, not assumed from a similar product name.</p><a class="text-link" href="https://github.com/Dahuum/nitro-sense-linux/blob/main/docs/feature-parity.md">Read the full feature matrix <span aria-hidden="true">↗</span></a></div><div class="compat-card"><div class="compat-title"><span class="small-label">CURRENT TARGET</span><strong>Nitro AN515-45</strong><span class="compat-system">Acer · AMD platform · Linux</span></div><dl class="compat-list"><div><dt>Fan Auto / Max / Custom</dt><dd><span class="check" aria-hidden="true">✓</span> Measured on hardware</dd></div><div><dt>Temperature / RPM</dt><dd><span class="check" aria-hidden="true">✓</span> Live sensor readings</dd></div><div><dt>Keyboard RGB</dt><dd class="pending">Firmware readback matched · visual unverified</dd></div><div><dt>Linux power profiles</dt><dd><span class="check" aria-hidden="true">✓</span> Set / readback tested</dd></div><div><dt>CoolBoost</dt><dd><span class="check" aria-hidden="true">✓</span> Firmware readback tested</dd></div><div><dt>Backlight / battery / USB settings</dt><dd><span class="check" aria-hidden="true">✓</span> Firmware readback tested</dd></div><div><dt>Other Nitro models</dt><dd class="muted">Not verified</dd></div><div><dt>Windows backend</dt><dd class="muted">Not included</dd></div></dl><p class="compat-note">Settings tests changed and restored CoolBoost, backlight timeout, battery limit and USB charging. Readback verifies device state, not every physical effect. This independent reconstruction is not an official Acer application or a claim of complete original-app parity.</p></div></div></section>
-    <section class="section wrap install-section" id="install"><div class="section-intro"><p class="eyebrow">03 / READY WHEN YOU ARE</p><h2>From download<br>to desktop.</h2><p>Start with the release notes for the exact requirements and hardware validation status. The application and kernel driver are separate components.</p></div><div class="install-layout"><div class="terminal"><div class="terminal-title"><span><i></i><i></i><i></i></span><span>Install from source</span><button class="copy-button" data-copy="install-code" aria-label="Copy source installation commands">Copy</button></div><pre><code id="install-code">git clone https://github.com/Dahuum/nitro-sense-linux.git
+
+    <section class="split" id="install" aria-labelledby="install-title">
+      <div><p class="eyebrow">03 / MAKE YOURSELF AT HOME</p><h2 id="install-title">Start with the app.<br>Then the driver.</h2><p class="note">Python 3.10+ and PySide6. Launch as your normal user. Hardware controls use a separately installed driver and a narrow access group.</p><p class="note">The source release includes driver setup, removal and recovery instructions. Kernel headers must match your running kernel.</p><a class="text-link" href="https://github.com/Dahuum/nitro-sense-linux/blob/main/docs/installation.md">Read the installation guide <span aria-hidden="true">↗</span></a></div>
+      <div><div class="code-panel"><div class="code-heading"><span>TERMINAL / SOURCE INSTALL</span><button type="button" id="copy-install" hidden>Copy</button></div><pre tabindex="0"><code id="install-code">git clone https://github.com/Dahuum/nitro-sense-linux.git
 cd nitro-sense-linux
 python -m venv .venv
-. .venv/bin/activate
-python -m pip install .
-nitro-sense</code></pre><div class="terminal-note">Run the desktop app as your normal user. Configure hardware access separately.</div></div><div class="requirements"><h3>Before you launch</h3><ul><li><b>A supported Linux system</b><span>Initial hardware target: Nitro AN515-45.</span></li><li><b>Python + Qt dependencies</b><span>See the README for the supported Python version and system libraries.</span></li><li><b>Linuwu-Sense for controls</b><span>A compatible kernel, build headers and the matched driver. Telemetry can work without it.</span></li><li><b>Permission to access hardware</b><span>Install the documented access rules; avoid running the whole graphical app as root.</span></li></ul><a class="text-link" href="https://github.com/Dahuum/nitro-sense-linux/blob/main/docs/installation.md">Detailed installation guide <span aria-hidden="true">↗</span></a></div></div><div class="safety-note"><span class="safety-icon" aria-hidden="true">↺</span><div><h3>Control includes a way back.</h3><p>The app requests firmware automatic fan control when exiting after manual changes. Hardware errors, abrupt termination, and driver loss can prevent restoration. Read the recovery instructions before enabling controls; keep the firmware’s thermal protections in place.</p></div><a href="https://github.com/Dahuum/nitro-sense-linux/blob/main/docs/backend.md">Backend & recovery <span aria-hidden="true">↗</span></a></div></section>
-    <section class="downloads-section" id="downloads"><div class="wrap"><div class="download-heading"><div><p class="eyebrow">04 / YOUR NEXT MOVE</p><h2>Put Linux in control.</h2><p>Download the app, inspect the source, and see exactly what’s been tested.</p></div><a class="button primary" href="https://github.com/Dahuum/nitro-sense-linux/releases/latest">Download latest <span aria-hidden="true">↓</span></a></div><div class="download-options"><a href="https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro_sense_linux-0.1.0-py3-none-any.whl"><span>PYTHON WHEEL</span><b>Installable package <span aria-hidden="true">↗</span></b><small>Dependencies required · Linux backend</small></a><a href="https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro-sense-linux-0.1.0.tar.gz"><span>SOURCE ARCHIVE</span><b>Build it yourself <span aria-hidden="true">↗</span></b><small>Code, documentation and packaging files</small></a><a href="https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/SHA256SUMS"><span>VERIFY YOUR DOWNLOAD</span><b>SHA-256 checksums <span aria-hidden="true">↗</span></b><small>Compare release artifact integrity</small></a></div></div></section>
-    <section class="wrap faq-section"><h2>Good questions.</h2><div class="faq-list"><details><summary>Is this the official Acer NitroSense app?</summary><p>No. This is an independent native Linux reconstruction. Acer and NitroSense names identify the hardware and original application; this project is not affiliated with or endorsed by Acer.</p></details><details><summary>Does everything work exactly like Windows?</summary><p>Complete UI, feature and behavioral parity has not been established. The release documentation separates implemented features, measured hardware results, visual checks and unavailable Windows-specific functionality. Windows support is not included in this Linux release.</p></details><details><summary>Will it work on another Nitro laptop?</summary><p>Do not assume so. The initial tested target is AN515-45. A driver supporting another model does not establish that this app’s feature set, RGB keyboard configuration or firmware behavior is correct for it. Check the compatibility documentation before enabling controls.</p></details><details><summary>Why are the app and driver installed separately?</summary><p>The Qt app provides the interface and telemetry. The kernel driver communicates with Acer’s firmware. It must match your hardware and running kernel, and needs administrator access to install. The desktop interface should run as your regular user with specific device permissions.</p></details><details><summary>How can I help improve support?</summary><p>Open a <a href="https://github.com/Dahuum/nitro-sense-linux/issues">GitHub issue</a> with the laptop model, kernel version, app version, available interfaces and observed behavior. Remove serial numbers and other private information from diagnostic reports.</p></details></div></section>
+.venv/bin/python -m pip install .
+.venv/bin/nitro-sense</code></pre></div><p class="code-note">Opening the app and importing a profile do not apply hardware settings. Use <code>--read-only</code> to explore with changes disabled.</p><p class="action-status" id="copy-status" role="status"></p></div>
+    </section>
+
+    <section class="split" id="compatibility" aria-labelledby="compat-title">
+      <div><p class="eyebrow">04 / KNOW WHAT YOU’RE GETTING</p><h2 id="compat-title">One laptop.<br>Real measurements.</h2><p class="note">The tested target is the AN515-45, BIOS V1.08, on Linux 6.18.39-1-lts. Other models are blocked from hardware writes. Compatibility is earned, one device at a time.</p></div>
+      <div class="validation"><dl><div><dt>Auto, Max &amp; custom fans</dt><dd><span class="status-dot" aria-hidden="true"></span>RPM response measured</dd></div><div><dt>Static, Breathing &amp; Wave RGB</dt><dd>Firmware readback matched <span class="asterisk">*</span></dd></div><div><dt>CoolBoost, timeout, battery &amp; USB</dt><dd>Set / readback tested</dd></div><div><dt>Linux power profiles</dt><dd>Set / readback tested</dd></div><div><dt>Native app &amp; packaging</dt><dd>39 tests + GitHub CI</dd></div></dl><p class="validation-note"><span class="asterisk">*</span> Visible keyboard colors and effects still need human confirmation. Firmware readback is a separate check. Hardware settings were restored after testing.</p><a class="text-link" href="https://github.com/Dahuum/nitro-sense-linux/tree/main/evidence">Read the test records <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <aside class="editorial-note" aria-label="Project scope and fan recovery"><span class="note-marker" aria-hidden="true">↳</span><div><p>Your fans should always have a way back.</p><p class="note">Normal exit and handled termination request Auto. A killed process, missing driver or hardware failure can prevent that. <a href="https://github.com/Dahuum/nitro-sense-linux/blob/main/SECURITY.md">Keep the recovery instructions handy.</a> This initial release doesn’t claim complete Windows UI, audio or accessibility parity.</p></div></aside>
+
+    <section class="downloads" id="downloads" aria-labelledby="downloads-title"><div class="downloads-head"><div><p class="eyebrow">05 / ALL YOURS</p><h2 id="downloads-title">Take it for a spin.</h2></div><span class="release-label">v0.1.0 / Linux</span></div><div class="download-list"><a href="https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro_sense_linux-0.1.0-py3-none-any.whl"><span><strong>Python wheel</strong><small>Native app · Python &amp; Qt required</small></span><span aria-hidden="true">↓</span></a><a href="https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro-sense-linux-0.1.0.tar.gz"><span><strong>Source archive</strong><small>App, driver source, docs &amp; tests</small></span><span aria-hidden="true">↓</span></a><a href="https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/SHA256SUMS"><span><strong>SHA-256 checksums</strong><small>Verify your downloaded files</small></span><span aria-hidden="true">↓</span></a></div><p class="note">Published files, installation notes and validation details live in the <a href="https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.1.0">release notes</a>. A wheel installs the app; it does not silently install a kernel driver.</p></section>
+
+    <section class="community" aria-labelledby="community-title"><h2 id="community-title">A little more Linux.<br>A little more yours.</h2><p>Inspect the code, report what your laptop actually does, or help improve the next release.</p><div class="pill-links"><a href="https://github.com/Dahuum/nitro-sense-linux">View on GitHub <span aria-hidden="true">↗</span></a><a href="https://github.com/Dahuum/nitro-sense-linux/issues">Report an issue <span aria-hidden="true">↗</span></a><a href="https://github.com/Dahuum/nitro-sense-linux/blob/main/CONTRIBUTING.md">Contribute <span aria-hidden="true">↗</span></a><button type="button" id="copy-link" hidden>Copy page link <span aria-hidden="true">↗</span></button></div><p class="action-status" id="share-status" role="status"></p></section>
   </main>
-  <footer class="wrap footer"><div><a class="brand footer-brand" href="#">NITROSENSE<span class="brand-os">LINUX</span></a><p>An independent project by <a href="https://github.com/Dahuum">Dahuum</a>.<br>Made for the hardware you already own.</p></div><div class="footer-links"><a href="https://github.com/Dahuum/nitro-sense-linux">Source code</a><a href="https://github.com/Dahuum/nitro-sense-linux/releases">Releases</a><a href="https://github.com/Dahuum/nitro-sense-linux/issues">Report an issue</a><a href="https://github.com/Dahuum/nitro-sense-linux/blob/main/README.md">Documentation</a></div><p class="footer-small">Original web artwork. Illustrative interface values are from the documented fan test; the page does not read your hardware.</p></footer>
-  <div class="toast" role="status" aria-live="polite"></div>
+  <footer><p>Independent community software.<br>Not affiliated with or endorsed by Acer.</p><p>Made by <a href="https://github.com/Dahuum">Dahuum</a>.<br><a href="https://github.com/Dahuum/nitro-sense-linux/blob/main/THIRD_PARTY_NOTICES.md">MIT app · GPL driver · Font notices</a></p></footer>
+</div>
 </body>
 </html>

@@ -1,54 +1,68 @@
+<div align="center">
+
 # NitroSense Linux
 
-**Native fan, keyboard lighting and monitoring controls for Acer Nitro AN515-45.**
-Built with Qt for Python, reconstructed from the shipped NitroSense 3.1.3056.0
-interfaces and layouts, with a reviewed Linuwu-Sense kernel backend.
+### Native laptop controls for Linux.
 
-[Download v0.1.0](https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.1.0) ·
-[Website](https://dahuum.github.io/nitro-sense-linux/) ·
-[Installation](docs/installation.md) · [Feature matrix](docs/feature-parity.md) ·
-[Report a bug](https://github.com/Dahuum/nitro-sense-linux/issues)
+Fan control, four-zone keyboard lighting and monitoring for the Acer Nitro AN515-45.<br>
+Python · PySide6 / Qt · Linux WMI · MIT application / GPL driver
 
-![Native Linux interface, using the project-owned fallback skin](evidence/ui-native.png)
+**Early release v0.1.0 · Native desktop · AN515-45 hardware tested**
+
+[Website](https://dahuum.github.io/nitro-sense-linux/) · [Downloads](https://github.com/Dahuum/nitro-sense-linux/releases) · [Get started](#get-started) · [What works](#what-works) · [Documentation](#documentation) · [Contribute](CONTRIBUTING.md)
+
+<img src="evidence/ui-native.png" width="1000" alt="Actual NitroSense Linux native desktop application with CPU and GPU fan RPM, power profiles and temperature monitoring">
+
+*Actual native application on the development laptop, using independently drawn artwork.*
+
+</div>
+
+NitroSense Linux brings your laptop’s fan controls, keyboard lighting, device settings and live monitoring to a native Qt desktop. The application reads Linux sensors and communicates with Acer firmware through a reviewed, locally patched Linuwu-Sense driver. Run the desktop app as your normal user; administrator access is limited to driver setup.
+
+This is an independent community project, **not affiliated with Acer**. It is an initial release with deliberately narrow hardware support. Original layouts and commands informed the reconstruction; full Windows-software parity has not been established.
 
 ## What works
 
-- **Fan control:** firmware Auto, Max, independent CPU/GPU custom percentages and
-  live RPM. Manual control returns to Auto on normal or handled termination.
-- **CoolBoost:** read and toggle through the patched driver's APGeAction interface.
-- **Keyboard lighting:** static four-zone RGB, individual zone off/color, brightness;
-  Breathing, Neon, Wave, Shifting and Zoom with supported speed/direction/color.
-- **Monitoring:** CPU temperature/load, discrete NVIDIA temperature/load/VRAM,
-  memory use, other Linux hwmon sensors, live history, min/max, clear and CSV export.
-- **Power:** actual Linux Power Profiles Daemon profiles; labels and active state
-  come from the daemon, not fabricated Windows power-plan equivalents.
-- **Device settings:** keyboard backlight timeout, 80% battery limiter, and USB
-  charging thresholds when the firmware provides recognized state.
-- **Application:** safe local profiles, JSON import/export, C/F units, optional
-  system tray, diagnostics, responsive background sensor collection and an
-  original native skin. No browser runtime, Wine, telemetry server or account.
+| Capability | Current status |
+| --- | --- |
+| Auto / Max fan control and measured CPU/GPU RPM | Verified on the development laptop: **3125 / 3703 → 5769 / 5660 RPM**, then Auto restored |
+| Independent custom CPU/GPU fan percentages | Physically tested: **60% / 70% → 4615 / 5769 RPM**, then Auto restored |
+| Static four-zone RGB; Breathing and Wave | Requests matched firmware readback; **visible colors/effects still need human confirmation** |
+| Neon, Shifting and Zoom; effect controls and color palettes | Implemented and software-tested; these effects remain visually unverified |
+| CoolBoost, keyboard timeout, battery limit and USB charging thresholds | Set/readback tested; original settings restored afterward |
+| CPU/NVIDIA GPU telemetry, memory, history, min/max and CSV export | Implemented with real sensor sources; native UI and export software-tested |
+| Linux power profiles | Balanced set/readback tested; original performance profile restored |
+| Local profiles, JSON import/export, preferences, tray and diagnostics | Implemented and software-tested; loading/importing never applies settings |
+| Fan restoration on handled termination | Real normal-user GUI SIGTERM test: **manual 60 / 70 → clean exit → Auto 0 / 0** |
+| Windows/macOS backends, Acer proprietary audio processing and Windows accessibility controls | **Unavailable** |
 
-**This is an initial Linux release, not a claim of complete Windows pixel and
-feature parity.** The main layout follows recovered XAML, while dialogs use native
-Qt controls. Acer's DTS/TrueHarmony processing, Windows-only power schemes and
-Windows backend are not implemented. RGB commands matched firmware readback;
-visible colors/effects still need human confirmation. Read the [precise matrix](docs/feature-parity.md).
+**39 automated tests**, native GUI smoke checks, package checks and GitHub CI are separate from hardware validation. Read the [feature matrix](docs/feature-parity.md), [runtime records](evidence/) and [backend contract](docs/backend.md) for exactly what was observed.
 
-## Downloads
+**Supported write target:** **Acer Nitro AN515-45**. Hardware testing used **BIOS V1.08** and **Linux 6.18.39-1-lts**. The backend requires the exact Acer/model identity and recognized writable interfaces before enabling hardware changes. Other Nitro/Predator models are not assumed compatible, even if the underlying driver lists them. General Linux telemetry can work without the driver.
 
-| File | Use |
-|---|---|
-| [Source release](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro-sense-linux-0.1.0.tar.gz) | App, driver source, setup/removal scripts, docs and tests |
-| [Python wheel](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro_sense_linux-0.1.0-py3-none-any.whl) | Install the native application into a Python environment |
-| [SHA256SUMS](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/SHA256SUMS) | Verify downloaded artifact integrity |
+## Get started
 
-The wheel requires Python 3.10+ and PySide6 6.8+; pip resolves PySide6. It is not
-a self-contained AppImage. The source release includes the kernel driver; a
-wheel does not install or elevate a driver automatically.
+### Pick your package
 
-## Install the app
+| Platform / package | Scope |
+| --- | --- |
+| Linux — Python wheel | Native application; Python 3.10+ and PySide6 6.8+ required |
+| Linux — source archive | Application, kernel driver source, setup/removal scripts, documentation and tests |
+| Windows / macOS | No native backend or download is published |
 
-As your normal Linux user:
+Download only files actually attached to **[Releases](https://github.com/Dahuum/nitro-sense-linux/releases/tag/v0.1.0)** and compare them against that release’s `SHA256SUMS`. The wheel resolves PySide6 through pip; it is **not a self-contained AppImage** and does not install a kernel driver automatically.
+
+| Published file | Download |
+| --- | --- |
+| Application wheel | [nitro_sense_linux-0.1.0-py3-none-any.whl](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro_sense_linux-0.1.0-py3-none-any.whl) |
+| Source and driver | [nitro-sense-linux-0.1.0.tar.gz](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/nitro-sense-linux-0.1.0.tar.gz) |
+| Checksums | [SHA256SUMS](https://github.com/Dahuum/nitro-sense-linux/releases/download/v0.1.0/SHA256SUMS) |
+
+**Registry status:** releases are published on GitHub. No PyPI, AUR, Flathub, apt or dnf repository is published. Do not install an unrelated similarly named package as a substitute.
+
+### Install the application
+
+Clone the source and create an isolated Python environment:
 
 ```sh
 git clone https://github.com/Dahuum/nitro-sense-linux.git
@@ -58,122 +72,115 @@ python -m venv .venv
 .venv/bin/nitro-sense
 ```
 
-If your distribution already provides PySide6, `python -m venv
---system-site-packages .venv` can reuse it. On Debian/Ubuntu you may also need
-`python3-venv`, `libegl1`, `libopengl0`, `libxkbcommon0` and Qt's XCB dependencies.
-Use `QT_QPA_PLATFORM=wayland` or `xcb` to match your desktop if auto-detection fails.
+If your distribution already provides PySide6, `python -m venv --system-site-packages .venv` can reuse it. To install a downloaded wheel instead, create the environment and run its pip on the `.whl` file. Platform libraries, Qt display backends and troubleshooting are covered in the [installation guide](docs/installation.md).
 
-To install the release wheel instead, create a venv and run `pip install` on the
-wheel file inside it. Add the project's [desktop entry and icon](packaging/) to
-your user applications directory if desired, with `Exec` pointing at that venv's
-`nitro-sense` executable.
+For a user-owned environment, menu entry, icon and `~/.local/bin/nitro-sense` launcher, run **`./scripts/install-user.sh` without sudo**. The native application opens directly; no development web server is required.
 
-## Install the hardware driver
+### Set up hardware access
 
-**Supported write target: Acer Nitro AN515-45.** Hardware testing was performed on
-BIOS V1.08 and Linux `6.18.39-1-lts`. Other models remain unvalidated and are
-blocked from writes. Read-only telemetry can run without this driver.
+Install build tools, kernel module utilities and headers matching your **running kernel**. On Arch with the LTS kernel, these normally include `base-devel` and `linux-lts-headers`; other kernels need their own matching headers.
 
-Install matching kernel headers, compiler/build tools and kernel module utilities.
-On Arch with the LTS kernel this normally means `base-devel linux-lts-headers`.
-Use the header package matching your own running kernel.
+From the source checkout or unpacked source archive:
 
 ```sh
-# Inspect exact operations first; this does not change anything.
+# Review destinations and operations without changing anything.
 sudo ./scripts/setup-driver.sh --user "$(id -un)" --boot --dry-run
 
-# Build/install source, group permissions, and optional boot startup.
+# Build/install the driver, narrow group permissions and boot startup.
 sudo ./scripts/setup-driver.sh --user "$(id -un)" --boot
 ```
 
-The installer never unloads an active driver. Reboot/log back in so the driver
-and `nitrosense` group membership take effect. If there is no competing driver,
-a manual load is `sudo modprobe linuwu_sense`. Secure Boot may require signing
-the locally built module. Rebuild after a kernel upgrade; no binary built for a
-different kernel is shipped. See [full install/removal details](docs/installation.md).
+The installer never unloads an active module. Reboot/log back in so the driver and `nitrosense` group membership take effect. Where no competing driver is bound, manual loading is `sudo modprobe linuwu_sense`. Secure Boot may require locally signing the module. **Rebuild after a kernel upgrade:** no machine-specific precompiled module is distributed.
 
-Run the app **as your normal user**, not with sudo. Controls become available
-only when recognized and writable. Opening the app or importing a profile never
-applies settings; explicit Apply/selection actions do. `nitro-sense --read-only`
-turns off changes. `--enable-control` remains accepted for compatibility.
+Then launch **NitroSense Linux** from the application menu or run `nitro-sense` as your regular user. Do not run the GUI with sudo. See [installation, updates and removal](docs/installation.md) for the complete process and exact system changes.
 
-A user-level launcher can also be installed with `./scripts/install-user.sh`;
-it creates the environment, menu entry and icon without sudo.
+## Explore without changing hardware
 
-## Optional original artwork
+```sh
+nitro-sense --read-only
+nitro-sense --diagnose
+```
 
-The default project-owned skin works out of the box. Acer logos, artwork, fonts,
-installers and decompiled code are not distributed. If you have the exact original
-Acer NitroSense 3.1.3056.0 ZIP, import its local artwork without executing Acer code:
+Read-only mode disables hardware and power-profile changes. Diagnostics print actual available telemetry and capabilities without applying settings. Missing sensors remain unavailable rather than showing invented values. This is **not a simulated hardware demo**; the website’s interactive examples are separately labeled recorded samples.
+
+<details>
+<summary>Use your original NitroSense artwork locally</summary>
+
+The default native skin works on its own. If you have the exact original NitroSense 3.1.3056.0 Acer ZIP, import its artwork with:
 
 ```sh
 .venv/bin/nitro-sense-import-assets /path/to/Nitro_Sense_Acer_3.01.3056_W11x64_A.zip
 ```
 
-The importer checks the assembly and resource stream SHA-256 before extracting
-only images/fonts into `~/.local/share/nitro-sense/assets`. Use
-`NITRO_SENSE_ASSETS=none nitro-sense` to force the bundled native skin, or set the
-variable to a directory of locally imported resources. Importer support is pinned
-to the artifact hashes in [the evidence identities](evidence/artifact-identities.json).
+The importer verifies the assembly/resource-stream SHA-256 and reads only images/fonts without executing Acer code. Artwork is stored in `~/.local/share/nitro-sense/assets`. The [artifact identity record](evidence/artifact-identities.json) identifies the supported package.
 
-## Validation on the development laptop
+Set `NITRO_SENSE_ASSETS=none nitro-sense` to force the independent skin, or point `NITRO_SENSE_ASSETS` at a directory of locally imported resources. Proprietary artwork is not included in releases.
 
-| Operation | Observed result |
-|---|---|
-| Max fans, eight-second request | CPU 3125 → 5769 RPM; GPU 3703 → 5660 RPM |
-| Return to Auto | Six seconds later 3092 / 3703 RPM; cached request `0,0` |
-| Custom CPU 60%, GPU 70% | Measured 4615 / 5769 RPM; Auto restored afterward |
-| RGB Static/Breathing/Wave | Firmware readback matched modes, colors and brightness; visible output unverified |
-| CoolBoost / keyboard timeout | Toggle/readback matched; original values restored |
-| Battery limit / USB charging | Toggle/readback matched; original values restored |
-| Power profile | Balanced set/readback matched; original performance profile restored |
-| Normal-user GUI SIGTERM | Manual60/70 → clean exit0 → Auto0/0, before harness fallback |
+</details>
 
-[Runtime records](evidence/) distinguish measured RPM, requested percentages,
-firmware readback and visual verification. A driver returning success does not
-prove all physical effects. Tests are bounded samples on one laptop, not a broad
-hardware compatibility guarantee. Both fans were left in automatic mode after
-hardware testing. Battery calibration is intentionally excluded from automated
-control and tests.
+## Apply a hardware change
 
-## Fan recovery
+1. Start the application on the supported laptop with the driver loaded and recognized interfaces writable.
+2. Choose Auto or Max, or stage independent custom fan settings and use **Apply**. Slider release can apply a staged custom request.
+3. In Lighting, choose static zones or a dynamic effect, then explicitly press **Apply**.
+4. Save a local profile to keep a draft. Selecting, loading or importing one does not configure hardware; **Apply selected profile** sends its fan and lighting requests.
+5. Inspect measured fan RPM and firmware readback. Check keyboard colors/effects visually; successful command acceptance alone does not prove visible behavior.
 
-Normal window exit and handled SIGINT/SIGTERM request firmware Auto after manual
-fan changes. Closing to the tray keeps the app and selected fan mode running.
-SIGKILL, kernel failure, removed interfaces and hardware faults cannot be repaired
-by a stopped process. To request Auto directly:
+The application does not apply saved profiles automatically at startup. Battery calibration is excluded from automated controls. Run one configurator at a time, and read the [backend behavior](docs/backend.md) before testing an unvalidated effect.
+
+### Return fans to automatic control
+
+Normal exit and handled SIGINT/SIGTERM request Auto after manual changes. Closing to the tray intentionally keeps the app and fan mode running. SIGKILL, kernel/firmware failure and disappeared interfaces cannot be repaired by a stopped Python process.
+
+To request firmware Auto directly:
 
 ```sh
 printf '0,0\n' | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed
 ```
 
-See [security/access design](SECURITY.md) and [backend behavior](docs/backend.md).
+## Diagnostics
 
-## Development and reconstruction
+```sh
+nitro-sense --version
+nitro-sense --diagnose
+```
+
+Share only sanitized output in a [GitHub issue](https://github.com/Dahuum/nitro-sense-linux/issues), together with model, kernel, app version and reproducible steps. Do not upload passwords, tokens, serial numbers, original installers or complete private hardware backups.
+
+Profiles/preferences are local to `$XDG_CONFIG_HOME/nitro-sense-linux/profiles.json` (normally `~/.config/nitro-sense-linux/profiles.json`). Import files are bounded and validated as JSON; they do not execute commands.
+
+## Development
 
 ```sh
 QT_QPA_PLATFORM=offscreen NITRO_SENSE_ASSETS=none \
   python -m unittest discover -s tests -v
+
 QT_QPA_PLATFORM=offscreen NITRO_SENSE_ASSETS=none \
   python -m nitro_sense --smoke-test --screenshot /tmp/nitrosense.png
-python -m nitro_sense --diagnose
+
+python -m pip install build
+python -m build
 ```
 
-Tests use temporary sysfs fixtures and fake GUI backends; CI never writes laptop
-hardware. The buildless landing page is in `website/` and is published by the
-GitHub Pages workflow. New source releases are built with `python -m build`.
+`backend.py` owns capability detection, telemetry and validated device operations. `ui.py` owns native presentation; `profiles.py` handles local persistence and input validation. `protocol.py` retains pure recovered command encoders without hardware I/O. Tests use temporary sysfs fixtures and fake GUI backends; ordinary CI never writes physical hardware.
 
-- [Protocol reconstruction](docs/protocol-evidence.md)
-- [Original UI/resource evidence](docs/ui-evidence.md)
-- [Hardware investigation](docs/hardware-support.md)
-- [Feature parity and remaining differences](docs/feature-parity.md)
-- [Public REA record identity index](evidence/public-summary.json)
-- [Contributing](CONTRIBUTING.md) and [license notices](THIRD_PARTY_NOTICES.md)
+The buildless landing page lives in `website/` and publishes through GitHub Pages. Its [reference analysis and design system](docs/website-design-system.md) describe layout, typography, components, interactions and responsive behavior.
 
-REA static analysis, ILSpy and Ghidra established artifact, CIL, layout and native
-service facts. Raw vendor metadata, original C#/XAML and complete decompilation
-records remain local; only bounded protocol findings, identity hashes, runtime
-measurements and project-owned screenshots are published.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before adding model support or new writes. Passing software tests does not establish physical compatibility.
 
-The application and website are MIT licensed. The modified Linuwu-Sense driver
-retains its upstream GPL license. This is independent software, not an Acer product.
+## Documentation
+
+- [Installation, permissions, troubleshooting and removal](docs/installation.md)
+- [Compatibility, implemented features and remaining parity gaps](docs/feature-parity.md)
+- [Backend API, capability gates and recovery behavior](docs/backend.md)
+- [Hardware investigation and validation](docs/hardware-support.md) · [Runtime test records](evidence/)
+- [Protocol findings](docs/protocol-evidence.md) · [Original UI/resource findings](docs/ui-evidence.md)
+- [REA evidence identity index](evidence/public-summary.json) · [Artifact identities](evidence/artifact-identities.json)
+- [Website design system and reference analysis](docs/website-design-system.md)
+- [Release checks](docs/release-checklist.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
+
+## License and provenance
+
+The new application, website and scripts are [MIT licensed](LICENSE). The modified [Linuwu-Sense driver](driver/PROVENANCE.md) retains its source notices and upstream [GPL license](driver/LICENSE). Qt/PySide6 and self-hosted website fonts retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
+
+No Acer installer, EXE/DLL, original fonts/artwork or decompiled source is distributed. Raw vendor metadata and reconstruction outputs remain local; bounded protocol findings, hashes and runtime measurements are published. Exact original-software UI, audio, accessibility and Windows-backend parity remain **unfinished**, as documented in the feature matrix.

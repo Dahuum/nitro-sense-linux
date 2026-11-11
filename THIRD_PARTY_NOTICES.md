@@ -31,3 +31,16 @@ artifact digests and bounded protocol observations are documented separately.
 extracts personal local artwork without executing its code. The included native
 fallback skin is original project code. This project is independent and is not
 affiliated with or endorsed by Acer.
+
+## Website fonts
+
+The landing page self-hosts Funnel Display, Funnel Sans and Geist Mono, acquired
+from their respective directories in the Google Fonts repository:
+https://github.com/google/fonts/tree/main/ofl/funneldisplay,
+https://github.com/google/fonts/tree/main/ofl/funnelsans,
+https://github.com/google/fonts/tree/main/ofl/geistmono.
+These fonts are licensed under the SIL Open Font License; each supplied license
+is retained in `website/assets/fonts/OFL-*.txt`. Fonts are converted from their
+upstream TTF containers to WOFF2 for local web delivery. No font payload was copied
+from the HTTrack mirror. Font rendering is an independent website dependency,
+separate from Acer's optional local application artwork.
