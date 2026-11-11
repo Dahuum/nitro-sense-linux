@@ -631,6 +631,8 @@ static struct quirk_entry quirk_acer_nitro_anv16_71 = {
  static struct quirk_entry quirk_acer_nitro_an515_45 = {
     .nitro_sense = 2,
     .four_zone_kb = 1,
+    .kb_zone_arm = 1,
+    .an515_58_rgb_fix = 1,
  };
 
  static struct quirk_entry quirk_acer_nitro_an515_58 = {

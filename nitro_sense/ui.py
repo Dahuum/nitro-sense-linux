@@ -333,7 +333,7 @@ class NitroWindow(QGraphicsView):
         self.setStyleSheet('QGraphicsView {border:0;background:#0c0e10;}')
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff);self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         scene=QGraphicsScene(self);self.setScene(scene);scene.setSceneRect(0,0,1320,800)
-        self.canvas=Skin();self.canvas.setFixedSize(1320,800);self.canvas.setStyleSheet(STYLE)
+        self.canvas=self.create_canvas();self.canvas.setFixedSize(1320,800);self.canvas.setStyleSheet(STYLE)
         if ASSETS:
             self.art('images/100/img_bg_nitro.png',0,0,1320,760)
             self.art('images/100/img_bg_newboard_nitro.png',84,92,1152,624)
@@ -385,6 +385,8 @@ class NitroWindow(QGraphicsView):
         scene.addWidget(self.canvas)
         self.create_tray()
         self.timer=QTimer(self);self.timer.timeout.connect(self.refresh);self.timer.start(2000);self.refresh()
+    def create_canvas(self):
+        return Skin()
     def label(self,text,x,y,w,h,size=14,center=False):
         label=QLabel(text,self.canvas);label.setGeometry(x,y,w,h);label.setStyleSheet(f'font-size:{size}px;')
         if center:label.setAlignment(Qt.AlignmentFlag.AlignCenter)

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nitro-sense-linux"
-version = "0.1.0"
+version = "0.2.0"
 description = "Native Linux fan, keyboard lighting and monitoring controls for Acer Nitro AN515-45"
 readme = "README.md"
 requires-python = ">=3.10"

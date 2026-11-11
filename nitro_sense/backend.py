@@ -164,6 +164,15 @@ class Backend:
             pass
         return result
 
+    def _ac_online(self):
+        online = []
+        for supply in (self.root / 'class/power_supply').glob('*'):
+            if self._read(supply / 'type') in ('Mains', 'USB', 'USB_C'):
+                value = self._read(supply / 'online')
+                if value in ('0', '1'):
+                    online.append(value == '1')
+        return any(online) if online else None
+
     def snapshot(self):
         temperatures, fans = [], []
         for device in sorted((self.root / 'class/hwmon').glob('hwmon*')):
@@ -220,7 +229,7 @@ class Backend:
             temperatures.append({'name': gpu['name'] + ' / discrete GPU', 'celsius': gpu['temperature_c']})
         power = self._power()
         return {'model': self._read(self.root / 'class/dmi/id/product_name', platform.machine()),
-                'temperatures': temperatures, 'fans': fans, 'fan_request': fan_request,
+                'temperatures': temperatures, 'fans': fans, 'fan_request': fan_request, 'ac_online': self._ac_online(),
                 'fan_control_available': enabled, 'lighting_available': lighting_enabled,
                 'reason': reason, 'lighting_reason': ('Driver interface available; visible effects require user verification.'
                      if lighting_enabled else 'Compatible writable lighting interfaces are unavailable or control is disabled.'),
@@ -261,8 +270,11 @@ class Backend:
             raise ValueError('Exactly four zone colors are required.')
         values = [self._color(v) for v in colors]
         self._int(brightness, 0, 100, 'Brightness')
+        payload = ','.join(values + [str(brightness)]) + '\n'
+        enable = f'0,0,{brightness},0,0,0,0\n'
         with self._lock:
-            self._control_path('four_zoned_kb/per_zone_mode').write_text(','.join(values + [str(brightness)]) + '\n')
+            self._control_path('four_zoned_kb/per_zone_mode').write_text(payload)
+            self._control_path('four_zoned_kb/four_zone_mode').write_text(enable)
         return {'requested_colors': ['#' + c for c in values], 'requested_brightness': brightness,
                 'verified_visible': False}
 
@@ -279,15 +291,21 @@ class Backend:
         rgb = self._color(color)
         red, green, blue = (int(rgb[i:i+2], 16) for i in (0, 2, 4))
         # Match inspected driver transformations instead of promising ignored parameters.
-        if mode in (0, 1):
+        if mode == 0:
             speed = 0
         if mode in (0, 1, 2, 5):
             direction = 0
         if mode in (2, 3):
             red = green = blue = 0
         values = (mode, speed, brightness, direction, red, green, blue)
+        per_zone_color = rgb if mode not in (2, 3) else '000000'
+        per_zone_payload = ','.join([per_zone_color] * 4 + [str(brightness)]) + '\n'
+        dynamic_payload = ','.join(map(str, values)) + '\n'
         with self._lock:
-            self._control_path('four_zoned_kb/four_zone_mode').write_text(','.join(map(str, values)) + '\n')
+            # The backlight is not enabled by the dynamic command alone on this
+            # model; set per-zone colors first, then the dynamic mode command.
+            self._control_path('four_zoned_kb/per_zone_mode').write_text(per_zone_payload)
+            self._control_path('four_zoned_kb/four_zone_mode').write_text(dynamic_payload)
         return {'requested': dict(zip(('mode', 'speed', 'brightness', 'direction', 'red', 'green', 'blue'), values)),
                 'verified_visible': False}
 

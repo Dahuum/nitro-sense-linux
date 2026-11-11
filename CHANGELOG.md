@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — 2026-11-11
+
+Lighting now actually turns on for the Acer Nitro AN515-45. Static mode writes
+per-zone colors followed by the static enable command; dynamic modes prepare
+per-zone colors before the dynamic command. Breathing speed is preserved on the
+patched driver instead of being forced to zero. Driver quirk enables LED zone
+arming and the RGB fix for this model, and the saved keyboard state file no
+longer overrides the firmware default to black on boot.
+
 ## 0.1.0 — 2026-11-11
 
 First native Linux release for the inspected Acer Nitro AN515-45. Qt desktop UI,

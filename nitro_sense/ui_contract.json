@@ -1,0 +1,3964 @@
+{
+  "schema_version": 1,
+  "artifact_sha256": "f71a2eebf07f11e91337a0f5de7feefda54e96d8b007d3904adf4f459856b2cd",
+  "evidence_type": "static-recovered-xaml-and-managed-handler-observations",
+  "limitations": [
+    "No Windows runtime screenshot or execution is established by this contract.",
+    "Declared attributes are not a complete WPF layout/style simulation.",
+    "Selected absolute bounds are derived for 100% DPI and the base1320x760 shell.",
+    "Registry-dependent visibility remains separate from model-package declarations."
+  ],
+  "target": {
+    "model": "Nitro AN515-45",
+    "machine_type": 1,
+    "year": 2021,
+    "window_class": "Nitro_MainWindow_Octavia",
+    "monitoring_selection": "standard unless Windows AcerGUID support selects Acer-mode variant"
+  },
+  "sources": {
+    "shell": {
+      "relative_path": "NitroSense.Nitro_MainWindow_Octavia.xaml",
+      "sha256": "d5ecdbb4e8e96e95f1f7182fd9bb38fd3c890c79323bc7fb8d5ab102f7dcdf76"
+    },
+    "fan": {
+      "relative_path": "NitroSense.Nitro_FanControlPage.xaml",
+      "sha256": "ba751030b8636c02f0fe50ff1496fe3ea23b309bf22b8e6066382a4ac90c9df5"
+    },
+    "monitoring": {
+      "relative_path": "NitroSense.Nitro_MonitoringPage.xaml",
+      "sha256": "1bd2f008e9d068b82e9162df68ad5833b92076fc91dedf39fc8b1ace7e246690"
+    },
+    "monitoring_acer_mode": {
+      "relative_path": "NitroSense.Nitro_MonitoringPage_Acermode.xaml",
+      "sha256": "803932fa921d63b9d933f467da4a10a1f234624bfcbfa9d62c98399f8743cc76"
+    },
+    "lighting": {
+      "relative_path": "NitroSense.Popup_Lighting.xaml",
+      "sha256": "fd6f10bd8de1398456e7c34635c76f6c4a918ced6e05f6cfb0621c59c7d8cd26"
+    },
+    "dynamic_lighting": {
+      "relative_path": "NitroSense.LightingDynamicUI.xaml",
+      "sha256": "7892d8fb9f6c59fa1893f50431f4faaeebbf0fdea4402b2f0a753ed4bab7bb0b"
+    },
+    "custom_color": {
+      "relative_path": "NitroSense.More_color_picker.xaml",
+      "sha256": "a03de957bd0f8e49b4897b4a0c5eae88e2ddbcea447e3f275832e45d2b5796cb"
+    },
+    "style": {
+      "relative_path": "style/100/psstyle.xaml",
+      "sha256": "a3f5bff7164eb844cc55b56746f9b6642d8b412d28f0f7d5fb21c26439ed6109"
+    },
+    "language": {
+      "relative_path": "lang/en.xaml",
+      "sha256": "863f05f74ddfc8d4916c26d5cbb2643df399f98df761a76861d80076fb2d8fed"
+    }
+  },
+  "layouts": {
+    "shell": {
+      "root_type": "Window",
+      "root_properties": {
+        "Height": 760,
+        "Width": 1320,
+        "WindowStyle": "None",
+        "AllowsTransparency": true,
+        "Focusable": true,
+        "ResizeMode": "CanMinimize",
+        "FontFamily": "Segoe UI"
+      },
+      "controls": {
+        "mainWindow": {
+          "type": "Window",
+          "properties": {
+            "Height": 760,
+            "Width": 1320,
+            "WindowStyle": "None",
+            "AllowsTransparency": true,
+            "Focusable": true,
+            "ResizeMode": "CanMinimize",
+            "FontFamily": "Segoe UI"
+          },
+          "handlers": {
+            "StateChanged": "Window_StateChanged",
+            "Loaded": "Window_Loaded",
+            "MouseLeftButtonDown": "mainWindow_MouseLeftButtonDown",
+            "SourceInitialized": "mainWindow_SourceInitialized",
+            "Closing": "mainWindow_Closing"
+          }
+        },
+        "wndViewbox": {
+          "type": "Viewbox",
+          "properties": {
+            "Stretch": "Uniform"
+          }
+        },
+        "Main_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 1320,
+            "Height": 760
+          },
+          "handlers": {
+            "MouseDown": "Main_Grid_MouseDown"
+          },
+          "rows": [
+            92,
+            "*",
+            44
+          ],
+          "columns": [
+            84,
+            "*",
+            84
+          ]
+        },
+        "MainTitle_Rectangle": {
+          "type": "Rectangle",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 1320,
+            "Height": 92,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Focusable": false,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          }
+        },
+        "Close_Button": {
+          "type": "Button",
+          "properties": {
+            "Focusable": false,
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 26,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,42,85,0",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Click": "Close_Button_Click"
+          }
+        },
+        "Minimize_Button": {
+          "type": "Button",
+          "properties": {
+            "Focusable": false,
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,42,126,0",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Click": "Minimize_Button_Click"
+          }
+        },
+        "Setting_Button": {
+          "type": "Button",
+          "properties": {
+            "TabIndex": 6,
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 26,
+            "Height": 26,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,42,169,0",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Click": "Setting_Button_Click"
+          }
+        },
+        "SoundMode_Button": {
+          "type": "Button",
+          "properties": {
+            "TabIndex": 5,
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 35,
+            "Height": 26,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,42,210,0",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Click": "SoundMode_Button_Click"
+          }
+        },
+        "Lighting_Button": {
+          "type": "Button",
+          "properties": {
+            "TabIndex": 4,
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 35,
+            "Height": 26,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,42,260,0",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Click": "Lighting_Button_Click"
+          }
+        },
+        "Planet9_Button": {
+          "type": "Button",
+          "properties": {
+            "TabIndex": 3,
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 18,
+            "Height": 27,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,45,315,0",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Click": "Planet9_Click"
+          }
+        },
+        "gfe_Button": {
+          "type": "Button",
+          "properties": {
+            "TabIndex": 2,
+            "Grid.Column": 1,
+            "Grid.Row": 0,
+            "Width": 104,
+            "Height": 28,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Margin": "0,42,260,0"
+          },
+          "handlers": {
+            "Click": "gfe_Button_Click",
+            "Initialized": "gfe_Button_Initialized",
+            "MouseEnter": "gfe_Button_MouseEnter",
+            "MouseLeave": "gfe_Button_MouseLeave"
+          }
+        },
+        "Content_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 1,
+            "Row": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          },
+          "rows": [
+            "*",
+            "*"
+          ]
+        },
+        "PowerPlanText": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 1,
+            "Grid.Column": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "FontSize": 16,
+            "Margin": "38,296,0,0",
+            "Width": 216
+          }
+        },
+        "setting_Popup": {
+          "type": "Popup",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "StaysOpen": false,
+            "Placement": "Bottom",
+            "HorizontalOffset": -231,
+            "VerticalOffset": 5,
+            "AllowsTransparency": true,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Closed": "setting_Popup_Closed",
+            "Opened": "setting_Popup_Opened"
+          }
+        },
+        "grid_setting_pop": {
+          "type": "Grid",
+          "properties": {
+            "Height": "Auto",
+            "Width": 340,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          }
+        },
+        "bg_0": {
+          "type": "Rectangle",
+          "properties": {
+            "Margin": "0,15,0,0",
+            "Width": 340,
+            "Height": "Auto",
+            "Canvas.Left": 0,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "setting_grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 340,
+            "Height": 291
+          },
+          "rows": [
+            25,
+            25,
+            36,
+            36,
+            36,
+            36,
+            36,
+            25,
+            36
+          ],
+          "columns": [
+            15,
+            "*",
+            10
+          ]
+        },
+        "dgpuonly_border": {
+          "type": "Border",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 5
+          }
+        },
+        "lcdoverdrive_border": {
+          "type": "Border",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 6
+          }
+        },
+        "lcdoverdrive": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 6,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "FontSize": 14
+          }
+        },
+        "stickykey_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 2,
+            "Width": 52,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "stickykey_Checkbox_Checked",
+            "Unchecked": "stickykey_Checkbox_Unchecked"
+          }
+        },
+        "winmenukey_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 3,
+            "Width": 52,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "winmenukey_Checkbox_Checked",
+            "Unchecked": "winmenukey_Checkbox_Unchecked"
+          }
+        },
+        "lcdoverdrive_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 6,
+            "Width": 52,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "lcdoverdrive_Checkbox_Checked",
+            "Unchecked": "lcdoverdrive_Checkbox_Unchecked"
+          }
+        },
+        "C_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "C_RadioButton_Checked"
+          }
+        },
+        "advance_C_TextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "1,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "F_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "F_RadioButton_Checked"
+          }
+        },
+        "advance_F_TextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "1,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Keyboard_Settings": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 7,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "FontSize": 14,
+            "FontWeight": "Bold"
+          }
+        },
+        "Backlight_text": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 8,
+            "Width": 230,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "FontSize": 14
+          }
+        },
+        "Backlight_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 8,
+            "Width": 52,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "Backlightoff_Checkbox_Checked",
+            "Unchecked": "Backlightoff_Checkbox_Unchecked"
+          }
+        },
+        "DGPUonly_text": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 5,
+            "Width": 230,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "FontSize": 14
+          }
+        },
+        "DGPUonly_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 5,
+            "Width": 52,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "Discrete_GPU_Checkbox_Checked",
+            "Unchecked": "Discrete_GPU_Checkbox_Unchecked"
+          }
+        },
+        "SoundMode_Popup": {
+          "type": "Popup",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "StaysOpen": false,
+            "Placement": "Bottom",
+            "HorizontalOffset": -112,
+            "VerticalOffset": 5,
+            "AllowsTransparency": true,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Closed": "soundmode_Popup_Closed",
+            "Opened": "soundmode_Popup_Opened"
+          }
+        },
+        "grid_SoundMode_pop": {
+          "type": "Grid",
+          "properties": {
+            "Height": "Auto",
+            "Width": 267,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          }
+        },
+        "Path": {
+          "type": "Path",
+          "properties": {
+            "Width": 15.9958,
+            "Height": 16.0084,
+            "Canvas.Left": 122,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "SoundMode_Content_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 267,
+            "Height": "Auto"
+          },
+          "rows": [
+            20,
+            40,
+            28,
+            "*",
+            6
+          ],
+          "columns": [
+            15,
+            "*",
+            10
+          ]
+        },
+        "logo_0": {
+          "type": "Path",
+          "properties": {
+            "Width": 43.0505,
+            "Height": 33.45,
+            "Stretch": "Fill"
+          }
+        },
+        "acer_trueharmony": {
+          "type": "Path",
+          "properties": {
+            "Width": 138.619,
+            "Height": 14.4003,
+            "Margin": "10,5,0,0",
+            "Stretch": "Fill"
+          }
+        },
+        "SoundMode_Item_List": {
+          "type": "StackPanel",
+          "properties": {
+            "VerticalAlignment": "Top",
+            "Grid.Column": 1,
+            "Grid.Row": 3
+          }
+        },
+        "Gaming_General_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "SoundMode_Checked"
+          }
+        },
+        "Gaming_General": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Gaming_FPS_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "SoundMode_Checked"
+          }
+        },
+        "Gaming_FPS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Gaming_Sports_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "SoundMode_Checked"
+          }
+        },
+        "Gaming_Sports": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Movies_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "SoundMode_Checked"
+          }
+        },
+        "Movies": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Music_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "SoundMode_Checked"
+          }
+        },
+        "Music": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Voice_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "SoundMode_Checked"
+          }
+        },
+        "Voice": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "DTS_SoundMode_Popup": {
+          "type": "Popup",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "StaysOpen": false,
+            "Placement": "Bottom",
+            "HorizontalOffset": -162,
+            "VerticalOffset": 5,
+            "AllowsTransparency": true,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Closed": "soundmode_Popup_Closed",
+            "Opened": "soundmode_Popup_Opened"
+          }
+        },
+        "grid_DTS_SoundMode_pop": {
+          "type": "Grid",
+          "properties": {
+            "Height": "Auto",
+            "Width": 267,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          }
+        },
+        "DTS_SoundMode_Content_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 265,
+            "Height": "Auto"
+          },
+          "rows": [
+            20,
+            40,
+            28,
+            "*",
+            6
+          ],
+          "columns": [
+            15,
+            "*",
+            10
+          ]
+        },
+        "DTS_SoundMode_Item_List": {
+          "type": "StackPanel",
+          "properties": {
+            "VerticalAlignment": "Top",
+            "Grid.Column": 1,
+            "Grid.Row": 3
+          }
+        },
+        "Gaming_Shooter_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Gaming_Shooter_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Gaming_RPG_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Gaming_RPG_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Gaming_Strategy_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Gaming_Strategy_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Movies_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Movies_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Music_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Music_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Voice_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Voice_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Automatic_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Automatic_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "Custom_Audio_RadioButton_DTS": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "DTS_SoundMode_Checked"
+          }
+        },
+        "Custom_Audio_DTS": {
+          "type": "TextBlock",
+          "properties": {
+            "Width": 180,
+            "Grid.Column": 1,
+            "Grid.Row": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "11,0,0,0",
+            "FontSize": 16
+          }
+        },
+        "AcerTureHarmony_notice": {
+          "type": "TextBlock",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "0,12,0,0",
+            "FontSize": 12
+          }
+        },
+        "grid_lighting_pop": {
+          "type": "Grid",
+          "properties": {
+            "Width": 1320,
+            "Height": 760,
+            "Column": 0,
+            "Row": 0,
+            "ColumnSpan": 3,
+            "RowSpan": 3
+          }
+        },
+        "Planet9_Popup": {
+          "type": "Popup",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "StaysOpen": false,
+            "Placement": "Bottom",
+            "HorizontalOffset": -123,
+            "VerticalOffset": 5,
+            "AllowsTransparency": true,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Closed": "Planet9_Popup_Closed",
+            "Opened": "Planet9_Popup_Opened"
+          }
+        },
+        "grid_Planet9_pop": {
+          "type": "Grid",
+          "properties": {
+            "Height": "Auto",
+            "Width": 265.12,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          },
+          "columns": [
+            "132*",
+            "133*"
+          ]
+        },
+        "Planet9_Content_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 260,
+            "Height": "Auto",
+            "ColumnSpan": 2,
+            "Margin": "2,0,3.12,0"
+          },
+          "rows": [
+            15,
+            "*",
+            60,
+            5
+          ],
+          "columns": [
+            "133*",
+            "127*"
+          ]
+        },
+        "Planet9_Banner_image": {
+          "type": "Image",
+          "properties": {
+            "Width": 240,
+            "Height": 60,
+            "Margin": "0,10,0,0"
+          }
+        },
+        "Planet9_content": {
+          "type": "TextBlock",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Width": 240,
+            "FontSize": 12,
+            "Margin": "0,10,0,0"
+          }
+        },
+        "Button_Join": {
+          "type": "Button",
+          "properties": {
+            "Width": 140,
+            "Height": 28,
+            "Grid.Column": 0,
+            "Grid.Row": 2,
+            "HorizontalAlignment": "Center",
+            "Grid.ColumnSpan": 2,
+            "Margin": "60,16.4,60,15.6"
+          },
+          "handlers": {
+            "Click": "Planet9_Join_Click"
+          }
+        },
+        "Mask_Rectangle": {
+          "type": "Rectangle",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 1320,
+            "Height": 760,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Visibility": "Hidden",
+            "Grid.RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          }
+        },
+        "main_mask_Rectangle": {
+          "type": "Rectangle",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 1320,
+            "Height": 760,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Visibility": "Hidden",
+            "Margin": "0,10,0,0",
+            "Grid.RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          }
+        }
+      }
+    },
+    "fan": {
+      "root_type": "UserControl",
+      "root_properties": {
+        "Height": 312,
+        "Width": 1152,
+        "FontFamily": "Segoe UI"
+      },
+      "controls": {
+        "Main_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 1152,
+            "Height": 312
+          },
+          "columns": [
+            36,
+            220,
+            32,
+            160,
+            "*",
+            "*",
+            160,
+            112
+          ]
+        },
+        "fan_control_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 1
+          },
+          "rows": [
+            78,
+            56,
+            12,
+            56,
+            12,
+            56,
+            "*"
+          ]
+        },
+        "FanModeAuto": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Width": 220,
+            "Height": 56,
+            "Padding": "-40,0,0,0"
+          }
+        },
+        "FanModeMax": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Width": 220,
+            "Height": 56,
+            "Padding": "-40,0,0,0"
+          }
+        },
+        "FanModeCustom": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Row": 5,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Width": 220,
+            "Height": 56,
+            "Padding": "-40,0,0,0"
+          }
+        },
+        "oc_notice_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 1,
+            "Row": 3,
+            "ColumnSpan": 2,
+            "RowSpan": 6,
+            "Visibility": "Visible",
+            "Margin": "0.4,-5,0.4,27.4"
+          },
+          "columns": [
+            240,
+            "*",
+            20
+          ]
+        },
+        "bg": {
+          "type": "Path",
+          "properties": {
+            "Width": 236,
+            "Height": 196.002,
+            "Margin": "-8,55,0,0",
+            "Canvas.Left": 0,
+            "Canvas.Top": 2.03848e-05,
+            "Stretch": "Fill"
+          }
+        },
+        "FanWaringOverlocking": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 2,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "TOP",
+            "Margin": "10,140,0,0"
+          }
+        },
+        "CPU_speed_control_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 3
+          },
+          "rows": [
+            151,
+            32,
+            40,
+            "*"
+          ]
+        },
+        "CPU_textblock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Top",
+            "FontSize": 18,
+            "FontFamily": "Segoe UI"
+          }
+        },
+        "CPU_ScrollBar": {
+          "type": "Slider",
+          "properties": {
+            "Grid.Row": 2,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Thumb.DragStarted": "ScrollBar_DragStarted",
+            "Thumb.DragCompleted": "ScrollBar_DragCompleted",
+            "ValueChanged": "ScrollBar_ValueChanged"
+          }
+        },
+        "CPU_Auto": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Row": 3,
+            "Width": 80,
+            "Height": 20,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Custom_Auto_Checked_Unchecked",
+            "Unchecked": "Custom_Auto_Checked_Unchecked"
+          }
+        },
+        "GPU_speed_control_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 6
+          },
+          "rows": [
+            151,
+            32,
+            40,
+            "*"
+          ]
+        },
+        "GPU_textblock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "FontSize": 18
+          }
+        },
+        "GPU1_ScrollBar": {
+          "type": "Slider",
+          "properties": {
+            "Grid.Row": 2,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Thumb.DragStarted": "ScrollBar_DragStarted",
+            "Thumb.DragCompleted": "ScrollBar_DragCompleted",
+            "ValueChanged": "ScrollBar_ValueChanged"
+          }
+        },
+        "GPU1_Auto": {
+          "type": "CheckBox",
+          "properties": {
+            "Grid.Row": 3,
+            "Width": 80,
+            "Height": 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Custom_Auto_Checked_Unchecked",
+            "Unchecked": "Custom_Auto_Checked_Unchecked"
+          }
+        },
+        "CPU_information_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 4
+          },
+          "rows": [
+            60,
+            77,
+            44,
+            37,
+            "*"
+          ]
+        },
+        "CPU_fan": {
+          "type": "RotateTransform",
+          "properties": {}
+        },
+        "CPU_FanRate": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 2,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "FontWeight": "Bold",
+            "FontSize": 28
+          }
+        },
+        "CPU_RPM": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "FontSize": 12
+          }
+        },
+        "GPU_information_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 5
+          },
+          "rows": [
+            60,
+            77,
+            44,
+            37,
+            "*"
+          ]
+        },
+        "GPU1_fan": {
+          "type": "RotateTransform",
+          "properties": {}
+        },
+        "GPU1_FanRate": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 2,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "FontWeight": "Bold",
+            "FontSize": 28
+          }
+        },
+        "GPU_RPM": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "FontSize": 12
+          }
+        },
+        "ShowCoolBoosterInformationicon": {
+          "type": "CheckBox",
+          "properties": {
+            "Width": 16,
+            "Height": 16,
+            "VerticalAlignment": "Center",
+            "Margin": "0,0,5,0"
+          }
+        },
+        "CoolBoost": {
+          "type": "TextBlock",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "FontSize": 16,
+            "Margin": "0,0,10,0"
+          }
+        },
+        "ShowCoolBoosterStatusicon": {
+          "type": "CheckBox",
+          "properties": {
+            "Width": 52,
+            "Height": 20,
+            "VerticalAlignment": "Center"
+          },
+          "handlers": {
+            "Checked": "ShowCoolBoosterStatusicon_Checked",
+            "Unchecked": "ShowCoolBoosterStatusicon_Unchecked"
+          }
+        },
+        "ShowCoolBoosterInformationPopup": {
+          "type": "Popup",
+          "properties": {
+            "StaysOpen": false,
+            "HorizontalOffset": -30,
+            "VerticalOffset": 5,
+            "Placement": "Bottom",
+            "AllowsTransparency": true
+          },
+          "handlers": {
+            "Closed": "Common_Popup_Closed",
+            "Opened": "Common_Popup_Opened"
+          }
+        }
+      }
+    },
+    "monitoring": {
+      "root_type": "UserControl",
+      "root_properties": {
+        "FontFamily": "Segoe UI"
+      },
+      "controls": {
+        "Nitro_MonitoringPage1": {
+          "type": "UserControl",
+          "properties": {
+            "FontFamily": "Segoe UI"
+          },
+          "handlers": {
+            "Initialized": "Nitro_MonitoringPage1_Initialized"
+          }
+        },
+        "Main_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 1152,
+            "Height": 312
+          },
+          "columns": [
+            312,
+            "*"
+          ]
+        },
+        "PowerPlan_Mode": {
+          "type": "TextBlock",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 14
+          }
+        },
+        "PowerPlan_TabControl": {
+          "type": "TabControl",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 3,
+            "Grid.ColumnSpan": 4,
+            "Grid.RowSpan": 5,
+            "Margin": "0.4,0,0.4,0.4"
+          },
+          "handlers": {
+            "SelectionChanged": "Monitoring_TabControl_SelectionChanged"
+          }
+        },
+        "AC_TabControl": {
+          "type": "TabItem",
+          "properties": {
+            "Width": 120,
+            "Height": 31.9998
+          },
+          "handlers": {
+            "IsEnabledChanged": "AC_TabControl_IsEnabledChanged"
+          }
+        },
+        "AC_PowerSaver_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Margin": "0,0,-0.2,0",
+            "Padding": "-40,0,0,0"
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode0": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "AC_Balance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Padding": "-40,0,0,0",
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode1": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "AC_HighPerformance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 5,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Padding": "-40,0,0,0",
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode3": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "Battery_TabControl": {
+          "type": "TabItem",
+          "properties": {
+            "Width": 120,
+            "Height": 31.9998
+          },
+          "handlers": {
+            "IsEnabledChanged": "Battery_TabControl_IsEnabledChanged"
+          }
+        },
+        "Battery_PowerSaver_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Margin": "0,0,-0.2,0",
+            "Padding": "-40,0,0,0"
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode0": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "Battery_Balance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Padding": "-40,0,0,0",
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode1": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "Battery_HighPerformance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 5,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Padding": "-40,0,0,0",
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode3": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "oc_notice_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 1,
+            "Row": 6,
+            "ColumnSpan": 4,
+            "RowSpan": 3,
+            "Visibility": "Hidden",
+            "Margin": "0.4,0.6,0.4,27.4"
+          },
+          "columns": [
+            20,
+            "*",
+            20
+          ]
+        },
+        "Unit_info_TextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 14
+          }
+        },
+        "CPU_MinTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_MinTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 2,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_MaxTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_MaxTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_chartGrid": {
+          "type": "Grid",
+          "properties": {}
+        },
+        "CPU_dataPopup": {
+          "type": "Popup",
+          "properties": {
+            "Placement": "Relative",
+            "AllowsTransparency": true
+          }
+        },
+        "CPU_dataPopupContent": {
+          "type": "ContentControl",
+          "properties": {
+            "Margin": "10.05,11.07,5.93,6.87"
+          }
+        },
+        "CPU_textblock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "FontSize": 16,
+            "Margin": "10,10,0,0"
+          }
+        },
+        "CPU_Templature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 0,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 28
+          }
+        },
+        "CPU_Usage": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 28
+          }
+        },
+        "GPU_MinTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_MinTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 2,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_MaxTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_MaxTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_chartGrid": {
+          "type": "Grid",
+          "properties": {}
+        },
+        "GPU_dataPopup": {
+          "type": "Popup",
+          "properties": {
+            "Placement": "Relative",
+            "AllowsTransparency": true
+          }
+        },
+        "GPU_dataPopupContent": {
+          "type": "ContentControl",
+          "properties": {
+            "Margin": "10.05,11.07,5.93,6.87"
+          }
+        },
+        "GPU_DiscretedataPopup": {
+          "type": "Popup",
+          "properties": {
+            "Placement": "Relative",
+            "AllowsTransparency": true
+          }
+        },
+        "GPU_DiscretedataPopupContent": {
+          "type": "ContentControl",
+          "properties": {
+            "Margin": "10.05,8,5.93,6.87"
+          }
+        },
+        "GPU_DiscretePopup": {
+          "type": "Grid",
+          "properties": {
+            "Width": 167.986,
+            "Height": 47.9995,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Bottom",
+            "Visibility": "Hidden",
+            "Margin": "0,0,4,4"
+          },
+          "handlers": {
+            "MouseMove": "GPU_DiscretePopup_MouseMove",
+            "MouseLeave": "GPU_DiscretePopup_MouseLeave"
+          }
+        },
+        "GPU_DiscretePopupTextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Margin": "5.93, 3,10.05,11.07",
+            "FontSize": 12.5
+          }
+        },
+        "GPU1_title_TextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 6,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "FontSize": 16,
+            "Margin": "10,10,0,0"
+          }
+        },
+        "GPU_Templature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 0,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 28
+          }
+        },
+        "GPU_Usage": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 28
+          }
+        },
+        "gpu_tip_Popup": {
+          "type": "Popup",
+          "properties": {
+            "HorizontalOffset": -70,
+            "VerticalOffset": 5,
+            "StaysOpen": false,
+            "Placement": "Bottom",
+            "AllowsTransparency": true,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}",
+            "Grid.RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Closed": "Common_Popup_Closed",
+            "Opened": "Common_Popup_Opened"
+          }
+        }
+      }
+    },
+    "monitoring_acer_mode": {
+      "root_type": "UserControl",
+      "root_properties": {
+        "FontFamily": "Segoe UI"
+      },
+      "controls": {
+        "Nitro_MonitoringPage1": {
+          "type": "UserControl",
+          "properties": {
+            "FontFamily": "Segoe UI"
+          }
+        },
+        "Main_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 1152,
+            "Height": 312
+          },
+          "columns": [
+            312,
+            "*"
+          ]
+        },
+        "PowerPlan_Mode": {
+          "type": "TextBlock",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 14
+          }
+        },
+        "PowerPlan_TabControl": {
+          "type": "TabControl",
+          "properties": {
+            "Grid.Column": 1,
+            "Grid.Row": 3,
+            "Grid.ColumnSpan": 4,
+            "Grid.RowSpan": 5,
+            "Margin": "0.4,0,0.4,0.4"
+          },
+          "handlers": {
+            "SelectionChanged": "Monitoring_TabControl_SelectionChanged"
+          }
+        },
+        "AC_TabControl": {
+          "type": "TabItem",
+          "properties": {
+            "Width": 120,
+            "Height": 31.9998
+          },
+          "handlers": {
+            "IsEnabledChanged": "PowerPlan_TabControl_IsEnabledChanged"
+          }
+        },
+        "AC_PowerSaver_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode0": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "AC_Balance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode1": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "AC_Acer_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 5,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode2": {
+          "type": "TextBlock",
+          "properties": {
+            "Width": 220,
+            "FontSize": 15
+          }
+        },
+        "AC_HighPerformance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 7,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15,
+            "Margin": "0,0,-0.2,0"
+          },
+          "handlers": {
+            "Checked": "AC_PowerPlanMode_Checked",
+            "MouseEnter": "AC_PowerPlanMode_MouseEnter",
+            "MouseLeave": "AC_PowerPlanMode_MouseLeave"
+          }
+        },
+        "AC_PowerPlanMode3": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "Battery_TabControl": {
+          "type": "TabItem",
+          "properties": {
+            "Width": 120,
+            "Height": 31.9998
+          },
+          "handlers": {
+            "IsEnabledChanged": "PowerPlan_TabControl_IsEnabledChanged"
+          }
+        },
+        "Battery_PowerSaver_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode0": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "Battery_Balance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode1": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "Battery_Acer_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 5,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode2": {
+          "type": "TextBlock",
+          "properties": {
+            "Width": 220,
+            "FontSize": 15
+          }
+        },
+        "Battery_HighPerformance_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Row": 7,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Width": 257,
+            "Height": 56,
+            "FontSize": 15
+          },
+          "handlers": {
+            "Checked": "Battery_PowerPlanMode_Checked",
+            "MouseEnter": "Battery_PowerPlanMode_MouseEnter",
+            "MouseLeave": "Battery_PowerPlanMode_MouseLeave"
+          }
+        },
+        "Battery_PowerPlanMode3": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 15
+          }
+        },
+        "oc_notice_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Column": 1,
+            "Row": 6,
+            "ColumnSpan": 4,
+            "RowSpan": 3,
+            "Visibility": "Hidden",
+            "Margin": "0.4,0.6,0.4,27.4"
+          },
+          "columns": [
+            20,
+            "*",
+            20
+          ]
+        },
+        "Unit_info_TextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 14
+          }
+        },
+        "CPU_MinTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_MinTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 2,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_MaxTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_MaxTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "CPU_chartGrid": {
+          "type": "Grid",
+          "properties": {}
+        },
+        "CPU_dataPopup": {
+          "type": "Popup",
+          "properties": {
+            "Placement": "Relative",
+            "AllowsTransparency": true
+          }
+        },
+        "CPU_dataPopupContent": {
+          "type": "ContentControl",
+          "properties": {
+            "Margin": "10.05,11.07,5.93,6.87"
+          }
+        },
+        "CPU_textblock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "FontSize": 16,
+            "Margin": "10,10,0,0"
+          }
+        },
+        "CPU_Templature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 0,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 28
+          }
+        },
+        "CPU_Usage": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 28
+          }
+        },
+        "GPU_MinTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 1,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_MinTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 2,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_MaxTemplature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 3,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_MaxTemplature_value": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 4,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 12
+          }
+        },
+        "GPU_chartGrid": {
+          "type": "Grid",
+          "properties": {}
+        },
+        "GPU_dataPopup": {
+          "type": "Popup",
+          "properties": {
+            "Placement": "Relative",
+            "AllowsTransparency": true
+          }
+        },
+        "GPU_dataPopupContent": {
+          "type": "ContentControl",
+          "properties": {
+            "Margin": "10.05,11.07,5.93,6.87"
+          }
+        },
+        "GPU_DiscretedataPopup": {
+          "type": "Popup",
+          "properties": {
+            "Placement": "Relative",
+            "AllowsTransparency": true
+          }
+        },
+        "GPU_DiscretedataPopupContent": {
+          "type": "ContentControl",
+          "properties": {
+            "Margin": "10.05,8,5.93,6.87"
+          }
+        },
+        "GPU_DiscretePopup": {
+          "type": "Grid",
+          "properties": {
+            "Width": 167.986,
+            "Height": 47.9995,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Bottom",
+            "Visibility": "Hidden",
+            "Margin": "0,0,4,4"
+          },
+          "handlers": {
+            "MouseMove": "GPU_DiscretePopup_MouseMove",
+            "MouseLeave": "GPU_DiscretePopup_MouseLeave"
+          }
+        },
+        "GPU_DiscretePopupTextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Margin": "5.93, 3,10.05,11.07",
+            "FontSize": 12.5
+          }
+        },
+        "GPU1_title_TextBlock": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 6,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "FontSize": 16,
+            "Margin": "10,10,0,0"
+          }
+        },
+        "GPU_Templature": {
+          "type": "TextBlock",
+          "properties": {
+            "Grid.Row": 0,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontSize": 28
+          }
+        },
+        "GPU_Usage": {
+          "type": "TextBlock",
+          "properties": {
+            "FontSize": 28
+          }
+        },
+        "gpu_tip_Popup": {
+          "type": "Popup",
+          "properties": {
+            "HorizontalOffset": -70,
+            "VerticalOffset": 5,
+            "StaysOpen": false,
+            "Placement": "Bottom",
+            "AllowsTransparency": true,
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}",
+            "Grid.RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Closed": "Common_Popup_Closed",
+            "Opened": "Common_Popup_Opened"
+          }
+        }
+      }
+    },
+    "lighting": {
+      "root_type": "UserControl",
+      "root_properties": {},
+      "controls": {
+        "main_mask_Rectangle": {
+          "type": "Rectangle",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "Width": 1320,
+            "Height": 760,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Visibility": "Hidden",
+            "Margin": "0,5,0,0",
+            "Grid.RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          }
+        },
+        "Main_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 0,
+            "Width": 867.84,
+            "Height": 488.16,
+            "ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}",
+            "RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "rows": [
+            97,
+            "*",
+            24
+          ],
+          "columns": [
+            24,
+            "*",
+            24
+          ]
+        },
+        "colors_Popup": {
+          "type": "Popup",
+          "properties": {
+            "Grid.Column": 0,
+            "Grid.Row": 0,
+            "StaysOpen": false,
+            "Placement": "Right",
+            "HorizontalOffset": 5,
+            "VerticalOffset": -60,
+            "AllowsTransparency": true,
+            "Grid.RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}",
+            "Grid.ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}"
+          },
+          "handlers": {
+            "Opened": "colors_Popup_Opened",
+            "Closed": "colors_Popup_Closed"
+          }
+        },
+        "bg": {
+          "type": "Path",
+          "properties": {
+            "Width": 280,
+            "Height": 140,
+            "Canvas.Left": 0,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "Basic_color_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 1,
+            "Column": 1
+          },
+          "columns": [
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*"
+          ]
+        },
+        "lighting_basic_RadioButton1": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 0,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton2": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 1,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton3": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 2,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton4": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 3,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton5": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 4,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton6": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 5,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton7": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 6,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton8": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 7,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_basic_RadioButton9": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 8,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "Lighting_recent_color_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 1,
+            "Column": 1
+          },
+          "columns": [
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*"
+          ]
+        },
+        "lighting_recent_RadioButton1": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 0,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton2": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 1,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton3": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 2,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton4": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 3,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton5": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 4,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton6": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 5,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton7": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 6,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton8": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 7,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "lighting_recent_RadioButton9": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 8,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Checked": "Color_RadioButton_Checked"
+          }
+        },
+        "gray": {
+          "type": "Path",
+          "properties": {
+            "Width": 860,
+            "Height": 480,
+            "Canvas.Left": 3.92004,
+            "Canvas.Top": 4.07977,
+            "Stretch": "Fill"
+          }
+        },
+        "frame": {
+          "type": "Path",
+          "properties": {
+            "Width": 860,
+            "Height": 480,
+            "Canvas.Left": 3.91998,
+            "Canvas.Top": 4.07996,
+            "Stretch": "Fill"
+          }
+        },
+        "static_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "static_RadioButton_Checked"
+          }
+        },
+        "dynamic_RadioButton": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "dynamic_RadioButton_Checked"
+          }
+        },
+        "icon_low": {
+          "type": "Path",
+          "properties": {
+            "Width": 18.11,
+            "Height": 13,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Stretch": "Fill",
+            "Margin": "0,-1.5,0,0"
+          }
+        },
+        "Brightness_ScrollBar": {
+          "type": "Slider",
+          "properties": {
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Minimum": 1,
+            "Maximum": 5,
+            "Width": 121
+          },
+          "handlers": {
+            "Thumb.DragStarted": "Lighting_ScrollBar_DragStarted",
+            "Thumb.DragCompleted": "Lighting_ScrollBar_DragCompleted",
+            "ValueChanged": "Lighting_ScrollBar_ValueChanged"
+          }
+        },
+        "icon_high": {
+          "type": "Path",
+          "properties": {
+            "Width": 18.1102,
+            "Height": 12.9999,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Canvas.Left": 0,
+            "Canvas.Top": 4.19617e-05,
+            "Stretch": "Fill",
+            "Margin": "0,-1.5,0,0"
+          }
+        },
+        "bg_": {
+          "type": "Path",
+          "properties": {
+            "Width": 816,
+            "Height": 364,
+            "Canvas.Left": 0,
+            "Canvas.Top": -3.8147e-05,
+            "Stretch": "Fill",
+            "Margin": "2.116,0.949,1.883,0.65"
+          }
+        },
+        "light_LightingDynamicUIUserControl_Grid": {
+          "type": "Grid",
+          "properties": {
+            "VerticalAlignment": "Top"
+          }
+        },
+        "LightingDynamic": {
+          "type": "Canvas",
+          "properties": {
+            "Width": 816,
+            "Height": 392
+          }
+        },
+        "Light_keyboard_On": {
+          "type": "Grid",
+          "properties": {
+            "Row": 3,
+            "Column": 1,
+            "VerticalAlignment": "Top",
+            "Visibility": "Visible"
+          },
+          "rows": [
+            "3*",
+            "*"
+          ]
+        },
+        "Zone4_Keyboard": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 1,
+            "HorizontalAlignment": "Right",
+            "Visibility": "Visible",
+            "Margin": "0,0,37.5,0"
+          }
+        },
+        "Zone4_color_block": {
+          "type": "Path",
+          "properties": {
+            "Width": 260,
+            "Height": 224,
+            "Canvas.Left": 0,
+            "Canvas.Top": -7.62939e-06,
+            "Stretch": "Fill",
+            "Margin": "0,30,0,11.6"
+          }
+        },
+        "Zone4_color1": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone4_color2": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone4_color3": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone3_Keyboard": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 1,
+            "VerticalAlignment": "Top",
+            "HorizontalAlignment": "Center",
+            "Visibility": "Visible"
+          }
+        },
+        "Zone3_color_block": {
+          "type": "Path",
+          "properties": {
+            "Width": 472,
+            "Height": 230,
+            "Canvas.Left": 0,
+            "Canvas.Top": -7.62939e-06,
+            "Stretch": "Fill",
+            "Margin": "164.1,30.4,107.9,4.4"
+          }
+        },
+        "Zone3_color1": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone3_color2": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone3_color3": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone3_color4": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone2_Keyboard": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 1,
+            "VerticalAlignment": "Top",
+            "HorizontalAlignment": "Center",
+            "Margin": "100,30,0,0",
+            "Visibility": "Visible"
+          }
+        },
+        "Zone2_color_block": {
+          "type": "Path",
+          "properties": {
+            "Width": 356,
+            "Height": 230,
+            "Canvas.Left": 0,
+            "Canvas.Top": -7.62939e-06,
+            "Stretch": "Fill",
+            "Margin": "-6,-0.2,294.05,5.8"
+          }
+        },
+        "Zone2_color1": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone2_color2": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone2_color3": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone2_color4": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone1_Keyboard": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 1,
+            "VerticalAlignment": "Top",
+            "HorizontalAlignment": "Center",
+            "Visibility": "Visible"
+          }
+        },
+        "Zone1_color_block": {
+          "type": "Path",
+          "properties": {
+            "Width": 356,
+            "Height": 230,
+            "Canvas.Left": 0,
+            "Canvas.Top": -7.62939e-06,
+            "Stretch": "Fill",
+            "Margin": "4,30.4,384,5.2"
+          }
+        },
+        "Zone1_color1": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone1_color2": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "Zone1_color3": {
+          "type": "GradientStop",
+          "properties": {}
+        },
+        "keyboard_inner": {
+          "type": "Path",
+          "properties": {
+            "Width": 736,
+            "Height": 226,
+            "Canvas.Left": 0,
+            "Canvas.Top": -3.05176e-05,
+            "Stretch": "Fill"
+          }
+        },
+        "kb_cover": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 1,
+            "VerticalAlignment": "Top"
+          }
+        },
+        "keyboard_cover": {
+          "type": "Path",
+          "properties": {
+            "Width": 740,
+            "Height": 230,
+            "Canvas.Left": 0,
+            "Canvas.Top": -2.28882e-05,
+            "Stretch": "Fill",
+            "Margin": "4,30.666,0,-30.267"
+          }
+        },
+        "Light_keyboard_Color": {
+          "type": "Grid",
+          "properties": {
+            "Row": 1,
+            "Column": 1,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          }
+        },
+        "Lighting_Zone1_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Width": 52,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Zone_Checkbox_Checked",
+            "Unchecked": "Zone_Checkbox_Unchecked"
+          }
+        },
+        "Zone1_Color_button": {
+          "type": "Button",
+          "properties": {
+            "Width": 20,
+            "Height": 20,
+            "Margin": "16,0,0,0"
+          },
+          "handlers": {
+            "Click": "Zone_ColerSetting_button_Click"
+          }
+        },
+        "line1": {
+          "type": "Rectangle",
+          "properties": {
+            "Width": 2,
+            "Height": 80,
+            "Canvas.Left": 0,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "Lighting_Zone2_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Width": 52,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Zone_Checkbox_Checked",
+            "Unchecked": "Zone_Checkbox_Unchecked"
+          }
+        },
+        "Zone2_Color_button": {
+          "type": "Button",
+          "properties": {
+            "Width": 20,
+            "Height": 20,
+            "Margin": "16,0,0,0"
+          },
+          "handlers": {
+            "Click": "Zone_ColerSetting_button_Click"
+          }
+        },
+        "line2": {
+          "type": "Rectangle",
+          "properties": {
+            "Width": 2,
+            "Height": 80,
+            "Canvas.Left": 0,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "Lighting_Zone3_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Width": 52,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Zone_Checkbox_Checked",
+            "Unchecked": "Zone_Checkbox_Unchecked"
+          }
+        },
+        "Zone3_Color_button": {
+          "type": "Button",
+          "properties": {
+            "Width": 20,
+            "Height": 20,
+            "Margin": "16,0,0,0"
+          },
+          "handlers": {
+            "Click": "Zone_ColerSetting_button_Click"
+          }
+        },
+        "line3": {
+          "type": "Rectangle",
+          "properties": {
+            "Width": 2,
+            "Height": 80,
+            "Canvas.Left": 0,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "Lighting_Zone4_Checkbox": {
+          "type": "CheckBox",
+          "properties": {
+            "Width": 52,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Zone_Checkbox_Checked",
+            "Unchecked": "Zone_Checkbox_Unchecked"
+          }
+        },
+        "Zone4_Color_button": {
+          "type": "Button",
+          "properties": {
+            "Width": 20,
+            "Height": 20,
+            "Margin": "16,0,0,0"
+          },
+          "handlers": {
+            "Click": "Zone_ColerSetting_button_Click"
+          }
+        },
+        "close_Button": {
+          "type": "Button",
+          "properties": {
+            "Focusable": false,
+            "Margin": "798,-77,2,0",
+            "Width": 20,
+            "Height": 16,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Grid.Column": 4
+          },
+          "handlers": {
+            "Click": "close_Button_Click"
+          }
+        }
+      }
+    },
+    "dynamic_lighting": {
+      "root_type": "UserControl",
+      "root_properties": {
+        "Width": 816,
+        "Height": 392,
+        "FontFamily": "Segoe UI"
+      },
+      "controls": {
+        "Light_Effects_RadioButton0": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Light_Effects_RadioButton_Checked"
+          }
+        },
+        "Light_Effects_RadioButton1": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Light_Effects_RadioButton_Checked"
+          }
+        },
+        "Light_Effects_RadioButton2": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Light_Effects_RadioButton_Checked"
+          }
+        },
+        "Light_Effects_RadioButton3": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Light_Effects_RadioButton_Checked"
+          }
+        },
+        "Light_Effects_RadioButton4": {
+          "type": "RadioButton",
+          "properties": {
+            "Width": 28,
+            "Height": 20
+          },
+          "handlers": {
+            "Checked": "Light_Effects_RadioButton_Checked"
+          }
+        },
+        "Speed_ScrollBar": {
+          "type": "Slider",
+          "properties": {
+            "Maximum": 9,
+            "Minimum": 1,
+            "HorizontalAlignment": "Left",
+            "Margin": "8,-10,0,0"
+          },
+          "handlers": {
+            "Thumb.DragStarted": "ScrollBar_DragStarted",
+            "Thumb.DragCompleted": "ScrollBar_DragCompleted",
+            "ValueChanged": "DynamicSpeedScrollBar_ValueChanged"
+          }
+        },
+        "Direction_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 1,
+            "Visibility": "Visible"
+          },
+          "rows": [
+            36,
+            "*"
+          ]
+        },
+        "Direction4way_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 1,
+            "Column": 0,
+            "Visibility": "Visible"
+          }
+        },
+        "Direction4way_StackPanel": {
+          "type": "StackPanel",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top",
+            "Visibility": "Visible"
+          }
+        },
+        "Direction4way2": {
+          "type": "RadioButton",
+          "properties": {
+            "Margin": "0,0,5,0"
+          },
+          "handlers": {
+            "Checked": "Direction4way_Checked"
+          }
+        },
+        "Direction4way1": {
+          "type": "RadioButton",
+          "properties": {
+            "Margin": "0,0,5,0"
+          },
+          "handlers": {
+            "Checked": "Direction4way_Checked"
+          }
+        },
+        "Keyboard_color_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 3,
+            "Column": 1
+          }
+        },
+        "Keyboar_BasicColor_StackPanel": {
+          "type": "StackPanel",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Margin": "0,0,60,0"
+          }
+        },
+        "Basic_Recent_color_Grid": {
+          "type": "Grid",
+          "properties": {},
+          "columns": [
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*"
+          ]
+        },
+        "lighting_basic_RadioButton1": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 0,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Margin": "4,0,0,0"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton2": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 1,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton3": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 2,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton4": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 3,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton5": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 4,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton6": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 5,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton7": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 6,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton8": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 7,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_basic_RadioButton9": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 9,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "Recent_color_Grid": {
+          "type": "Grid",
+          "properties": {},
+          "columns": [
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*",
+            "*"
+          ]
+        },
+        "lighting_recent_RadioButton1": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 0,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false,
+            "Margin": "4,0,0,0"
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton2": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 1,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton3": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 2,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton4": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 3,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton5": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 4,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton6": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 5,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton7": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 6,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton8": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 7,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "lighting_recent_RadioButton9": {
+          "type": "RadioButton",
+          "properties": {
+            "Grid.Column": 8,
+            "Width": 24,
+            "Height": 24,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "IsEnabled": false
+          },
+          "handlers": {
+            "Click": "ButtonChangeColor"
+          }
+        },
+        "Keyboar_MoreColor_StackPanel": {
+          "type": "StackPanel",
+          "properties": {
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "Margin": "20,0,20,0"
+          }
+        },
+        "Keyboar_MoreColor_Button": {
+          "type": "Button",
+          "properties": {
+            "IsTabStop": false,
+            "Focusable": false,
+            "Grid.Column": 2,
+            "Width": 193,
+            "Height": 36
+          },
+          "handlers": {
+            "Click": "Lighting_more_color_pick_Click"
+          }
+        },
+        "Keyboard_color_mask": {
+          "type": "Rectangle",
+          "properties": {
+            "IsEnabled": true
+          }
+        }
+      }
+    },
+    "custom_color": {
+      "root_type": "Window",
+      "root_properties": {
+        "Height": 364,
+        "Width": 480,
+        "AllowsTransparency": true,
+        "ResizeMode": "NoResize",
+        "WindowStyle": "None",
+        "FontFamily": "Segoe UI"
+      },
+      "controls": {
+        "wndViewbox": {
+          "type": "Viewbox",
+          "properties": {
+            "Stretch": "Uniform"
+          }
+        },
+        "Main_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Width": 480,
+            "Height": 364
+          },
+          "columns": [
+            45,
+            "*",
+            40
+          ]
+        },
+        "Bg_Grid": {
+          "type": "Grid",
+          "properties": {
+            "Row": 0,
+            "Column": 0,
+            "ColumnSpan": "{Binding Path=ColumnDefinitions.Count, ElementName=Main_Grid}",
+            "RowSpan": "{Binding Path=RowDefinitions.Count, ElementName=Main_Grid}"
+          }
+        },
+        "frame": {
+          "type": "Path",
+          "properties": {
+            "Width": 480,
+            "Height": 364,
+            "Canvas.Left": 0,
+            "Canvas.Top": 0,
+            "Stretch": "Fill"
+          }
+        },
+        "Color_image": {
+          "type": "Image",
+          "properties": {
+            "Grid.Column": 0,
+            "Width": 240,
+            "Height": 220
+          }
+        },
+        "image_Canvas": {
+          "type": "Canvas",
+          "properties": {
+            "Grid.Column": 0,
+            "Width": 240,
+            "Height": 220,
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "MouseLeftButtonDown": "image_Canvas_MouseLeftButtonDown",
+            "MouseMove": "image_Canvas_MouseMove",
+            "MouseLeave": "image_Canvas_MouseLeave"
+          }
+        },
+        "color_sight_Rectangle": {
+          "type": "Rectangle",
+          "properties": {
+            "Width": 19,
+            "Height": 19,
+            "IsEnabled": true
+          }
+        },
+        "Color_light_image_Canvas": {
+          "type": "Canvas",
+          "properties": {
+            "Grid.Column": 2,
+            "Width": 12,
+            "Height": 220,
+            "HorizontalAlignment": "Left"
+          },
+          "handlers": {
+            "MouseLeftButtonDown": "Color_light_image_Canvas_MouseLeftButtonDown"
+          }
+        },
+        "Color_light_image": {
+          "type": "Image",
+          "properties": {
+            "Width": 12,
+            "Height": 220,
+            "HorizontalAlignment": "Left"
+          }
+        },
+        "color_Slider": {
+          "type": "Slider",
+          "properties": {
+            "Focusable": false,
+            "Canvas.Top": -5.5,
+            "Height": 231,
+            "Width": 12,
+            "VerticalAlignment": "Center",
+            "Minimum": 0,
+            "Maximum": 219,
+            "SmallChange": 0,
+            "LargeChange": 0
+          },
+          "handlers": {
+            "ValueChanged": "color_Slider_ValueChanged"
+          }
+        },
+        "show_color_Image": {
+          "type": "Image",
+          "properties": {
+            "Grid.Column": 3,
+            "Width": 78,
+            "Height": 50,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Top"
+          }
+        },
+        "color_r_TextBox": {
+          "type": "TextBox",
+          "properties": {
+            "Width": 40,
+            "Height": 24,
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "FontSize": 13.33
+          }
+        },
+        "color_r_Label": {
+          "type": "Label",
+          "properties": {
+            "HorizontalAlignment": "Right",
+            "FontSize": 13.33
+          }
+        },
+        "color_g_TextBox": {
+          "type": "TextBox",
+          "properties": {
+            "Width": 40,
+            "Height": 24,
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "FontSize": 13.33
+          }
+        },
+        "color_g_Label": {
+          "type": "Label",
+          "properties": {
+            "HorizontalAlignment": "Right",
+            "FontSize": 13.33
+          }
+        },
+        "color_b_TextBox": {
+          "type": "TextBox",
+          "properties": {
+            "Width": 40,
+            "Height": 24,
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "FontSize": 13.33
+          }
+        },
+        "color_b_Label": {
+          "type": "Label",
+          "properties": {
+            "HorizontalAlignment": "Right",
+            "FontSize": 13.33
+          }
+        },
+        "OK_Button": {
+          "type": "Button",
+          "properties": {
+            "IsTabStop": false,
+            "Focusable": false,
+            "Width": 120,
+            "Height": 36,
+            "Grid.Column": 0,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "FontSize": 14
+          },
+          "handlers": {
+            "Click": "OK_Click"
+          }
+        },
+        "cancel_Button": {
+          "type": "Button",
+          "properties": {
+            "IsTabStop": false,
+            "Focusable": false,
+            "Width": 120,
+            "Height": 36,
+            "Grid.Column": 2,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "FontSize": 14
+          },
+          "handlers": {
+            "Click": "Cancel_Click"
+          }
+        },
+        "close_Button": {
+          "type": "Button",
+          "properties": {
+            "Focusable": false,
+            "Grid.Row": 1,
+            "Width": 20,
+            "Height": 16,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Top"
+          },
+          "handlers": {
+            "Click": "Cancel_Click"
+          }
+        }
+      }
+    }
+  },
+  "styles": {
+    "FanStyle": {
+      "Width": 200,
+      "Height": 200,
+      "UIElement.RenderTransformOrigin": "100,100"
+    },
+    "SpeedSliderStyle": {
+      "RangeBase.Value": 0,
+      "Width": 160,
+      "Height": 28,
+      "RangeBase.Minimum": 0,
+      "RangeBase.Maximum": 10,
+      "RangeBase.SmallChange": 1,
+      "RangeBase.LargeChange": 1,
+      "UIElement.SnapsToDevicePixels": true,
+      "FrameworkElement.OverridesDefaultStyle": true
+    }
+  },
+  "bitmap_resources": {
+    "btn_gfe": "../../Images/100/btn_gfe.png",
+    "Img_monitor_chartshadow": "../../Images/100/img_monitor_chartshadow.png",
+    "Img_monitor_chart": "../../Images/100/img_monitor_chart.png",
+    "Img_fan": "../../Images/100/img_fan.png",
+    "Img_fan_position": "../../Images/100/img_fan_position.png",
+    "Img_oc_dashboard_normal": "../../Images/100/img_oc_dashboard_normal.png",
+    "Img_oc_dashboard_faster": "../../Images/100/img_oc_dashboard_faster.png",
+    "Img_oc_dashboard_turbo": "../../Images/100/img_oc_dashboard_turbo.png",
+    "Img_oc_indicator": "../../Images/100/img_oc_indicator.png",
+    "Img_bg": "../../Images/100/img_bg.png",
+    "Img_bg_newboard": "../../Images/100/img_bg_newboard.png",
+    "img_bg_newboard_oc": "../../Images/100/img_bg_newboard_oc.png",
+    "Img_bg_nitro": "../../Images/100/img_bg_nitro.png",
+    "img_bg_newboard_nitro": "../../Images/100/img_bg_newboard_nitro.png",
+    "Img_Planet9_Banner": "../../Images/100/img_planet9_small.png"
+  },
+  "derived_bounds_100dpi": {
+    "window": [
+      0,
+      0,
+      1320,
+      760
+    ],
+    "content": [
+      84,
+      92,
+      1152,
+      624
+    ],
+    "fan_page": [
+      84,
+      92,
+      1152,
+      312
+    ],
+    "monitoring_page": [
+      84,
+      404,
+      1152,
+      312
+    ],
+    "Close_Button": [
+      1209,
+      57,
+      26,
+      20
+    ],
+    "Minimize_Button": [
+      1166,
+      57,
+      28,
+      20
+    ],
+    "Setting_Button": [
+      1125,
+      54,
+      26,
+      26
+    ],
+    "SoundMode_Button": [
+      1075,
+      54,
+      35,
+      26
+    ],
+    "Lighting_Button": [
+      1025,
+      54,
+      35,
+      26
+    ],
+    "Planet9_Button_base": [
+      987,
+      55,
+      18,
+      27
+    ],
+    "FanModeAuto": [
+      120,
+      170,
+      220,
+      56
+    ],
+    "FanModeMax": [
+      120,
+      238,
+      220,
+      56
+    ],
+    "FanModeCustom": [
+      120,
+      306,
+      220,
+      56
+    ],
+    "CPU_fan_art": [
+      540,
+      152,
+      200,
+      200
+    ],
+    "GPU_fan_art": [
+      756,
+      152,
+      200,
+      200
+    ],
+    "CPU_ScrollBar": [
+      372,
+      275,
+      160,
+      28
+    ],
+    "GPU1_ScrollBar": [
+      964,
+      275,
+      160,
+      28
+    ],
+    "CPU_Auto": [
+      452,
+      315,
+      80,
+      20
+    ],
+    "GPU1_Auto": [
+      964,
+      315,
+      80,
+      20
+    ]
+  },
+  "interaction_constants": {
+    "fan_slider_minimum": 0,
+    "fan_slider_maximum": 10,
+    "fan_slider_step": 1,
+    "fan_slider_percent_multiplier": 10,
+    "temperature_poll_ms": 4000,
+    "fan_poll_ms": 5000,
+    "fan_animation_direction": "negative",
+    "fan_animation_seconds_formula": "rpm>4500 ? 2 : 11-floor(rpm/450)",
+    "fan_animation_zero_rpm": "freeze current angle",
+    "coolboost_enabled_modes": [
+      "auto"
+    ],
+    "custom_selection_dispatches_immediately": true,
+    "slider_drag_dispatch": "drag-completed only",
+    "slider_keyboard_dispatch": "each non-drag value change",
+    "custom_auto_toggle_dispatches_immediately": true
+  }
+}

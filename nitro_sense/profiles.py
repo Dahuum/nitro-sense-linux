@@ -42,9 +42,24 @@ def validate_profile(value):
         raise ValueError('Dynamic lighting requires an effect from 1 to 5')
     if kind == 'dynamic' and mode in (3, 4) and direction not in (1, 2):
         raise ValueError('Wave and Shifting require direction 1 or 2')
+    enabled = lighting.get('zone_enabled', [isinstance(v, str) and v.upper() != '000000' for v in colors])
+    if not isinstance(enabled, list) or len(enabled) != 4 or any(type(v) is not bool for v in enabled):
+        raise ValueError('Four boolean zone enabled states are required')
+    effects = lighting.get('effect_settings', {})
+    if not isinstance(effects, dict) or len(effects) > 5:
+        raise ValueError('Effect settings must contain at most five effects')
+    normalized_effects = {}
+    for key, settings in effects.items():
+        if key not in ('1', '2', '3', '4', '5') or not isinstance(settings, dict):
+            raise ValueError('Unsupported saved lighting effect')
+        saved_speed = integer(settings, 'speed', 1, 9)
+        saved_direction = integer(settings, 'direction', 0, 2)
+        if key in ('3', '4') and saved_direction not in (1, 2):
+            raise ValueError('Wave and Shifting require direction 1 or 2')
+        normalized_effects[key] = {'speed': saved_speed, 'direction': saved_direction}
     return {'version': 1, 'name': name.strip(),
             'fan': {k: integer(fan, k, 0, 100) for k in ('cpu', 'gpu')},
-            'lighting': {'type': kind, 'colors': [color(v) for v in colors],
+            'lighting': {'type': kind, 'colors': [color(v) for v in colors], 'zone_enabled': enabled, 'effect_settings': normalized_effects,
                          'brightness': integer(lighting, 'brightness', 0, 100),
                          'mode': mode,
                          'speed': integer(lighting, 'speed', 0, 9),
@@ -77,6 +92,22 @@ class ProfileStore:
                     self.preferences['minimize_to_tray'] = prefs['minimize_to_tray']
                 if prefs.get('temperature_unit') in ('C', 'F'):
                     self.preferences['temperature_unit'] = prefs['temperature_unit']
+                recent = prefs.get('recent_colors', [])
+                if not isinstance(recent, list) or len(recent) > 9 or any(not isinstance(c, str) or not re.fullmatch(r'[0-9a-fA-F]{6}', c) for c in recent):
+                    raise ValueError('Recent colors must contain at most nine RGB values')
+                self.preferences['recent_colors'] = [c.upper() for c in recent]
+                custom = prefs.get('original_custom', {})
+                if not isinstance(custom, dict):
+                    raise ValueError('Original custom fan preferences must be an object')
+                validated_custom = {}
+                for key in ('cpu', 'gpu'):
+                    value = custom.get(key, 50)
+                    auto = custom.get(key + '_auto', True)
+                    if type(value) is not int or not 0 <= value <= 100 or value % 10 or type(auto) is not bool:
+                        raise ValueError('Custom fans require 10% steps and boolean Auto flags')
+                    validated_custom[key] = value
+                    validated_custom[key + '_auto'] = auto
+                self.preferences['original_custom'] = validated_custom
         except (OSError, ValueError, TypeError) as exc:
             self.error = str(exc)
 

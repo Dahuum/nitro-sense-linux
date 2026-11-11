@@ -35,7 +35,7 @@ class FeatureBackendTests(unittest.TestCase):
         self.assertEqual(self.dynamic.read_text(), '3,5,50,2,0,0,0\n')
         self.assertFalse(result['verified_visible'])
         self.backend.set_lighting_dynamic(1, speed=9, direction=2, color='#abcdef')
-        self.assertEqual(self.dynamic.read_text(), '1,0,100,0,171,205,239\n')
+        self.assertEqual(self.dynamic.read_text(), '1,9,100,0,171,205,239\n')
 
     def test_invalid_lighting_inputs_never_write(self):
         baseline = self.dynamic.read_text()
