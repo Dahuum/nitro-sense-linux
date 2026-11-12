@@ -587,7 +587,7 @@ class SettingsDialog(QDialog):
             control.setEnabled(bool(info.get('available')));control.setToolTip(info.get('reason','Interface unavailable'))
             form.addRow(title,control);self.switch_controls[name]=(control,info.get('value'))
         apply=QPushButton('Apply device settings');apply.clicked.connect(self.apply_switches);form.addRow(apply)
-        note=QLabel('Battery calibration is intentionally not automated. DTS/TrueHarmony audio processing requires Acer’s Windows components and is unavailable on Linux.');note.setWordWrap(True);form.addRow(note)
+        note=QLabel('Battery calibration is intentionally not automated. DTS/TrueHarmony audio processing requires the original Windows components and is unavailable on Linux.');note.setWordWrap(True);form.addRow(note)
         tabs.addTab(device,'Device')
         profiles=QWidget();pl=QVBoxLayout(profiles);self.profiles=QComboBox();self.reload_profiles();pl.addWidget(self.profiles)
         note=QLabel('Selecting or importing a profile does not change hardware. Apply sends the selected fan and lighting requests.');note.setWordWrap(True);pl.addWidget(note)
