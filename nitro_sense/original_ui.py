@@ -246,7 +246,7 @@ class OriginalNitroWindow(LinuxWindow):
     def show_coolboost_info(self):
         QMessageBox.information(self,'CoolBoost','CoolBoost increases fan speed to improve cooling. This control is available in Auto fan mode.')
     def show_sound(self):
-        QMessageBox.information(self,'Sound Mode','The original audio modes require Acer’s Windows audio components. No supported Linux audio-mode backend is available.')
+        QMessageBox.information(self,'Sound Mode','The original audio modes require the original Windows audio components. No supported Linux audio-mode backend is available.')
     def show_planet(self):
         # Preserve the button affordance; opening an external promotional URL
         # remains a deliberate separate click.
