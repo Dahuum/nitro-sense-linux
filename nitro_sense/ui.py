@@ -113,7 +113,7 @@ class Skin(QWidget):
                 p.drawLine(x+20,yy,x+w-20,yy)
         p.setPen(QColor('#eeeeee'))
         font = p.font();font.setPointSize(23);font.setLetterSpacing(font.SpacingType.AbsoluteSpacing, 6);p.setFont(font)
-        p.drawText(QRectF(420,47,480,40), Qt.AlignmentFlag.AlignCenter, 'NITRO SENSE')
+        p.drawText(QRectF(420,47,480,40), Qt.AlignmentFlag.AlignCenter, 'NITRO CONTROL')
         font.setPointSize(11);font.setLetterSpacing(font.SpacingType.AbsoluteSpacing,1);p.setFont(font)
         p.setPen(QColor('#969ba3'));p.drawText(QRectF(100,49,230,35),Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter,'LINUX / NATIVE')
 
